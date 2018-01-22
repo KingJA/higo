@@ -1,0 +1,35 @@
+<resources>
+
+    <style name="font_gray_10">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/gray_hi</item>
+    </style>
+
+    <style name="font_orange_10">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/orange_hi</item>
+    </style>
+    <style name="font_orange_18">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/orange_hi</item>
+    </style>
+    <style name="font_orange_14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/orange_hi</item>
+    </style>
+    <style name="font_9_12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/c_9</item>
+    </style>
+
+
+    <style name="font_3_16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/c_3</item>
+    </style>
+
+    <style name="font_3_12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/c_3</item>
+    </style>
+</resources>
