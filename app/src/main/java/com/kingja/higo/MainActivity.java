@@ -36,12 +36,12 @@ public class MainActivity extends BaseActivity {
     TextView tvNavWalkgo;
     @BindView(R.id.ll_nav_walkgo)
     LinearLayout llNavWalkgo;
-    @BindView(R.id.iv_nav_journey)
+    @BindView(R.id.iv_nav_order)
     ImageView ivNavJourney;
-    @BindView(R.id.tv_nav_journey)
+    @BindView(R.id.tv_nav_order)
     TextView tvNavJourney;
-    @BindView(R.id.ll_nav_journey)
-    LinearLayout llNavJourney;
+    @BindView(R.id.ll_nav_order)
+    LinearLayout llNavOrder;
     @BindView(R.id.iv_nav_mine)
     ImageView ivNavMine;
     @BindView(R.id.tv_nav_mine)
@@ -51,7 +51,6 @@ public class MainActivity extends BaseActivity {
 
     private Fragment mCurrentFragment;
     private int nCurrentPosition = -1;
-    private int mSelectedPosition = -1;
 
     @Override
     public void initVariable() {
@@ -70,7 +69,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initViewAndListener() {
-        mCurrentFragment = FragmentUtil.getFragment(0);
+        mCurrentFragment = FragmentUtil.getFragment(NavConstant.NAV_WALKGO);
         getSupportFragmentManager().beginTransaction().add(R.id.fl_main, mCurrentFragment).commit();
     }
 
@@ -79,20 +78,20 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.ll_nav_higo, R.id.ll_nav_lovego, R.id.ll_nav_walkgo, R.id.ll_nav_journey, R.id.ll_nav_mine})
+    @OnClick({R.id.ll_nav_higo, R.id.ll_nav_lovego, R.id.ll_nav_walkgo, R.id.ll_nav_order, R.id.ll_nav_mine})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_nav_higo:
-                selectTab(NavConstant.NAV_HIGO);
+                selectTab(NavConstant.NAV_WALKGO);
                 break;
             case R.id.ll_nav_lovego:
                 selectTab(NavConstant.NAV_LOVEGO);
                 break;
-            case R.id.ll_nav_walkgo:
-                selectTab(NavConstant.NAV_WALKGO);
-                break;
-            case R.id.ll_nav_journey:
-                selectTab(NavConstant.NAV_JOURNEY);
+//            case R.id.ll_nav_walkgo:
+//                selectTab(NavConstant.NAV_WALKGO);
+//                break;
+            case R.id.ll_nav_order:
+                selectTab(NavConstant.NAV_ORDER);
                 break;
             case R.id.ll_nav_mine:
                 selectTab(NavConstant.NAV_MINE);
@@ -124,23 +123,23 @@ public class MainActivity extends BaseActivity {
     private void setStatus(int index) {
         resetBottom();
         switch (index) {
-            case 0:
+            case NavConstant.NAV_HIGO:
                 ivNavHigo.setBackgroundResource(R.mipmap.ic_nav_higo);
                 tvNavHigo.setTextColor(getResources().getColor(R.color.orange_hi));
                 break;
-            case 1:
+            case NavConstant.NAV_LOVEGO:
                 ivNavLovego.setBackgroundResource(R.mipmap.ic_nav_lovego);
                 tvNavLovego.setTextColor(getResources().getColor(R.color.orange_hi));
                 break;
-            case 2:
+            case NavConstant.NAV_WALKGO:
                 ivNavWalkgo.setBackgroundResource(R.mipmap.ic_nav_walkgo);
                 tvNavWalkgo.setTextColor(getResources().getColor(R.color.orange_hi));
                 break;
-            case 3:
+            case NavConstant.NAV_ORDER:
                 ivNavJourney.setBackgroundResource(R.mipmap.ic_nav_journey);
                 tvNavJourney.setTextColor(getResources().getColor(R.color.orange_hi));
                 break;
-            case 4:
+            case NavConstant.NAV_MINE:
                 ivNavMine.setBackgroundResource(R.mipmap.ic_nav_mine);
                 tvNavMine.setTextColor(getResources().getColor(R.color.orange_hi));
                 break;
@@ -159,13 +158,12 @@ public class MainActivity extends BaseActivity {
     }
 
     private void selectTab(int position) {
-        mSelectedPosition = position;
-        if (mSelectedPosition == nCurrentPosition) {
+        if (position == nCurrentPosition) {
             return;
         }
         mCurrentFragment = FragmentUtil.switchFragment(getSupportFragmentManager(), mCurrentFragment, FragmentUtil
                 .getFragment(position));
-        nCurrentPosition = mSelectedPosition;
+        nCurrentPosition = position;
         setStatus(position);
     }
 }

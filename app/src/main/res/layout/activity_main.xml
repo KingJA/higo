@@ -70,6 +70,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/ll_nav_walkgo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -94,7 +95,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_nav_journey"
+            android:id="@+id/ll_nav_order"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -102,18 +103,18 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/iv_nav_journey"
+                android:id="@+id/iv_nav_order"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:background="@mipmap/ic_nav_journey"/>
 
             <TextView
-                android:id="@+id/tv_nav_journey"
+                android:id="@+id/tv_nav_order"
                 style="@style/font_gray_10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="嘻购"/>
+                android:text="订单"/>
 
         </LinearLayout>
 
