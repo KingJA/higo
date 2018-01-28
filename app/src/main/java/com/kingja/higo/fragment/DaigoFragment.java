@@ -10,7 +10,7 @@ import com.kingja.higo.injector.component.AppComponent;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class JourneyFragment extends BaseFragment {
+public class DaigoFragment extends BaseFragment {
     @Override
     protected void initComponent(AppComponent appComponent) {
 
@@ -28,6 +28,6 @@ public class JourneyFragment extends BaseFragment {
 
     @Override
     protected int getContentId() {
-        return R.layout.frag_journey;
+        return R.layout.frag_xigo_daigo;
     }
 }

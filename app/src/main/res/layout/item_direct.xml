@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="一月"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/direct_1"/>
+
+        <com.kingja.supershapeview.SuperShapeLinearLayout
+            android:layout_margin="12dp"
+            android:paddingRight="14dp"
+            android:paddingLeft="14dp"
+            android:gravity="center_vertical"
+            app:super_solidColor="#eeF8601A"
+            app:super_cornerRadius="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginRight="6dp"
+                style="@style/font_f_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="距预定结束"/>
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/cdv_direct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isHideTimeBackground="false"
+                app:isShowDay="false"
+                app:isShowHour="true"
+                app:isShowMillisecond="false"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:suffixGravity="center"
+                app:suffixTextColor="#ffffff"
+                app:suffixTextSize="14sp"
+                app:timeBgRadius="2dp"
+                app:timeBgSize="18dp"
+                app:timeBgColor="@color/white_hi"
+                app:timeTextColor="@color/orange_hi"
+                app:timeTextSize="13sp"/>
+
+
+        </com.kingja.supershapeview.SuperShapeLinearLayout>
+    </RelativeLayout>
+
+
+    <com.kingja.higo.view.NoPaddingTextView
+        style="@style/font_3_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:includeFontPadding="false"
+        android:text="湿身夜跑 "/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <com.kingja.higo.view.NoPaddingTextView
+                style="@style/font_6_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="2018-03-11至2018-03-13"/>
+
+            <com.kingja.higo.view.NoPaddingTextView
+                style="@style/font_6_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="南湖水畔"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.kingja.supershapeview.SuperShapeLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white_hi"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="2dp"
+                android:paddingEnd="6dp"
+                android:paddingStart="12dp"
+                android:paddingTop="2dp"
+                app:super_bottomLeftRadius="4dp"
+                app:super_strokeColor="@color/orange_hi"
+                app:super_strokeWidth="1dp"
+                app:super_topLeftRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.kingja.higo.view.NoPaddingTextView
+                        style="@style/font_9_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="¥"/>
+
+                    <com.kingja.higo.view.DeleteTextView
+                        style="@style/font_9_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="300"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.kingja.higo.view.NoPaddingTextView
+                        style="@style/font_orange_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="¥"/>
+
+                    <com.kingja.higo.view.NoPaddingTextView
+                        style="@style/font_orange_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="0dp"
+                        android:text="300"/>
+                </LinearLayout>
+
+
+            </com.kingja.supershapeview.SuperShapeLinearLayout>
+
+            <com.kingja.supershapeview.SuperShapeTextView
+                style="@style/font_f_13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="预订价 "
+                app:super_bottomRightRadius="4dp"
+                app:super_solidColor="@color/orange_hi"
+                app:super_topRightRadius="4dp"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

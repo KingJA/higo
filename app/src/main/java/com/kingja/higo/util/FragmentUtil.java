@@ -6,11 +6,11 @@ import android.support.v4.app.FragmentTransaction;
 
 
 import com.kingja.higo.R;
-import com.kingja.higo.fragment.HigoFragment;
-import com.kingja.higo.fragment.JourneyFragment;
+import com.kingja.higo.fragment.GuanggoFragment;
+import com.kingja.higo.fragment.OrderFragment;
 import com.kingja.higo.fragment.LovegoFragment;
 import com.kingja.higo.fragment.MineFragment;
-import com.kingja.higo.fragment.WalkgoFragment;
+import com.kingja.higo.fragment.XigoFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,22 +43,22 @@ public class FragmentUtil {
         } else {
             switch (position) {
                 case 0:
-                    fragment = new HigoFragment();
+                    fragment = new XigoFragment();
                     break;
                 case 1:
                     fragment = new LovegoFragment();
                     break;
                 case 2:
-                    fragment = new WalkgoFragment();
+                    fragment = new GuanggoFragment();
                     break;
                 case 3:
-                    fragment = new JourneyFragment();
+                    fragment = new OrderFragment();
                     break;
                 case 4:
                     fragment = new MineFragment();
                     break;
                 default:
-                    fragment = new HigoFragment();
+                    fragment = new XigoFragment();
                     break;
             }
             fragmentMap.put(position, fragment);

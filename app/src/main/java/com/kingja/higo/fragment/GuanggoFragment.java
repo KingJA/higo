@@ -1,12 +1,8 @@
 package com.kingja.higo.fragment;
 
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.kingja.higo.R;
 import com.kingja.higo.adapter.HigoPageAdapter;
@@ -14,8 +10,6 @@ import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Description:TODO
@@ -23,7 +17,7 @@ import butterknife.Unbinder;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class HigoFragment extends BaseFragment {
+public class GuanggoFragment extends BaseFragment {
     @BindView(R.id.tab_higo)
     TabLayout tabHigo;
     @BindView(R.id.vp_content_higo)
@@ -65,7 +59,7 @@ public class HigoFragment extends BaseFragment {
 
     @Override
     protected int getContentId() {
-        return R.layout.frag_higo;
+        return R.layout.frag_guanggo;
     }
 
 

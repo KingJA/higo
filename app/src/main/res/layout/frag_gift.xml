@@ -2,11 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical">
 
-    <TextView
+    <GridView
+        android:padding="10dp"
+        android:verticalSpacing="20dp"
+        android:horizontalSpacing="20dp"
+        android:id="@+id/gv_gift"
+        tools:listitem="@layout/item_gift"
+        android:numColumns="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="walkgo"/>
+        android:text="mine"/>
 
 </LinearLayout>

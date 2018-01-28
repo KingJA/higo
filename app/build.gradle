@@ -48,4 +48,8 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     /*supershapeview*/
     compile 'com.kingja.supershapeview:supershapeview:1.1.1'
+    /*KingJA's Libraries*/
+    compile 'com.kingja.supershapeview:supershapeview:1.1.2'
+    /*countdownview*/
+    compile 'com.github.iwgang:countdownview:2.1.6'
 }

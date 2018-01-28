@@ -22,7 +22,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/ll_nav_higo"
+            android:id="@+id/ll_nav_xigo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,7 +33,7 @@
                 android:id="@+id/iv_nav_higo"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:background="@mipmap/ic_nav_higo"/>
+                android:background="@mipmap/ic_nav_xigo"/>
 
             <TextView
                 android:id="@+id/tv_nav_higo"
@@ -57,7 +57,7 @@
                 android:id="@+id/iv_nav_lovego"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:background="@mipmap/ic_nav_lovego"/>
+                android:background="@mipmap/ic_nav_lovego_nor"/>
 
             <TextView
                 android:id="@+id/tv_nav_lovego"
@@ -71,7 +71,7 @@
 
         <LinearLayout
             android:visibility="gone"
-            android:id="@+id/ll_nav_walkgo"
+            android:id="@+id/ll_nav_guanggo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -82,7 +82,7 @@
                 android:id="@+id/iv_nav_walkgo"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:background="@mipmap/ic_nav_walkgo"/>
+                android:background="@mipmap/ic_nav_guanggo"/>
 
             <TextView
                 android:id="@+id/tv_nav_walkgo"
@@ -106,7 +106,7 @@
                 android:id="@+id/iv_nav_order"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:background="@mipmap/ic_nav_journey"/>
+                android:background="@mipmap/ic_nav_order_nor"/>
 
             <TextView
                 android:id="@+id/tv_nav_order"
@@ -130,7 +130,7 @@
                 android:id="@+id/iv_nav_mine"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:background="@mipmap/ic_nav_mine"/>
+                android:background="@mipmap/ic_nav_mine_nor"/>
 
             <TextView
                 android:id="@+id/tv_nav_mine"

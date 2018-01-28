@@ -1,14 +1,11 @@
 package com.kingja.higo.fragment;
 
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.kingja.higo.R;
@@ -19,8 +16,6 @@ import com.kingja.higo.injector.component.AppComponent;
 import java.lang.reflect.Field;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Description:TODO
@@ -28,14 +23,13 @@ import butterknife.Unbinder;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class LovegoFragment extends BaseFragment {
-    @BindView(R.id.tab_lovego)
-    TabLayout tabLovego;
-    @BindView(R.id.vp_content_lovego)
-    ViewPager vpContentLovego;
-    private String[] items = {"精选", "送情侣", "送情侣", "送长辈", "商务送"};
-    private Fragment mFragmentArr[] = new Fragment[5];
-
+public class XigoFragment extends BaseFragment {
+    @BindView(R.id.tab_xigo)
+    TabLayout tabXigo;
+    @BindView(R.id.vp_content_xigo)
+    ViewPager vpContentXigo;
+    private String[] items = {"直营", "代购"};
+    private Fragment mFragmentArr[] = new Fragment[2];
 
     @Override
     protected void initComponent(AppComponent appComponent) {
@@ -44,29 +38,23 @@ public class LovegoFragment extends BaseFragment {
 
     @Override
     protected void initViewAndListener() {
-        tabLovego.setTabMode(TabLayout.MODE_FIXED);
-        tabLovego.addTab(tabLovego.newTab().setText(items[0]));
-        tabLovego.addTab(tabLovego.newTab().setText(items[1]));
-        tabLovego.addTab(tabLovego.newTab().setText(items[2]));
-        tabLovego.addTab(tabLovego.newTab().setText(items[3]));
-        tabLovego.addTab(tabLovego.newTab().setText(items[4]));
-//        tabLovego.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                setIndicator(tabLovego, 60, 60);
-//            }
-//        });
+        tabXigo.setTabMode(TabLayout.MODE_FIXED);
+        tabXigo.addTab(tabXigo.newTab().setText(items[0]));
+        tabXigo.addTab(tabXigo.newTab().setText(items[1]));
+        tabXigo.post(new Runnable() {
+            @Override
+            public void run() {
+                setIndicator(tabXigo,60,60);
+            }
+        });
 
-        mFragmentArr[0] = new GiftFragment();
-        mFragmentArr[1] = new GiftFragment();
-        mFragmentArr[2] = new GiftFragment();
-        mFragmentArr[3] = new GiftFragment();
-        mFragmentArr[4] = new GiftFragment();
+        mFragmentArr[0] = new DirectgoFragment();
+        mFragmentArr[1] = new DirectgoFragment();
         XigoPageAdapter mHigoPageAdapter = new XigoPageAdapter(getChildFragmentManager(), mFragmentArr,
                 items);
-        vpContentLovego.setAdapter(mHigoPageAdapter);
-        vpContentLovego.setOffscreenPageLimit(2);
-        tabLovego.setupWithViewPager(vpContentLovego);
+        vpContentXigo.setAdapter(mHigoPageAdapter);
+        vpContentXigo.setOffscreenPageLimit(2);
+        tabXigo.setupWithViewPager(vpContentXigo);
     }
 
     @Override
@@ -76,7 +64,7 @@ public class LovegoFragment extends BaseFragment {
 
     @Override
     protected int getContentId() {
-        return R.layout.frag_lovego;
+        return R.layout.frag_xigo;
     }
 
     public void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
