@@ -1,22 +1,20 @@
 package com.kingja.higo.fragment;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.os.Handler;
 import android.widget.ListView;
 
 import com.kingja.higo.R;
 import com.kingja.higo.adapter.DirectgoAdapter;
-import com.kingja.higo.adapter.ScenicAdapter;
 import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.util.ToastUtil;
+import com.kingja.higo.view.LottieHeadView;
+import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
+import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Description:TODO
@@ -27,6 +25,8 @@ import butterknife.Unbinder;
 public class DirectgoFragment extends BaseFragment {
     @BindView(R.id.lv_direct)
     ListView lvDirect;
+    @BindView(R.id.refreshLayout)
+    TwinklingRefreshLayout refreshLayout;
 
     @Override
     protected void initComponent(AppComponent appComponent) {
@@ -37,6 +37,20 @@ public class DirectgoFragment extends BaseFragment {
     protected void initViewAndListener() {
         DirectgoAdapter mDirectgoAdapter = new DirectgoAdapter(getActivity(), new ArrayList<String>());
         lvDirect.setAdapter(mDirectgoAdapter);
+        refreshLayout.setHeaderView(new LottieHeadView(getActivity()));
+        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
+            @Override
+            public void onPullDownReleasing(final TwinklingRefreshLayout refreshLayout, float fraction) {
+                ToastUtil.showText("加载网络");
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.finishRefreshing();
+                        ToastUtil.showText("结束");
+                    }
+                },2000);
+            }
+        });
 
     }
 
@@ -49,4 +63,5 @@ public class DirectgoFragment extends BaseFragment {
     protected int getContentId() {
         return R.layout.frag_xigo_direct;
     }
+
 }

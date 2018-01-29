@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical">
 
-  <ListView
-      android:divider="#ffffffff"
-      android:dividerHeight="0dp"
-      android:id="@+id/lv_direct"
-      tools:listitem="@layout/item_direct"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"/>
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lv_direct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#ffffffff"
+            android:dividerHeight="0dp"
+            tools:listitem="@layout/item_direct"/>
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 
 
 </LinearLayout>

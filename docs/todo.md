@@ -2,3 +2,6 @@
 * 完善SuperView，适应LinearLayout，ImageView等
 * ListView 列表标题栏
 * 植入LoadSir
+
+
+* 订单：根据不同的订单属性分配不同的item
