@@ -1,6 +1,8 @@
 package com.kingja.higo.fragment;
 
 import android.os.Handler;
+import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import com.kingja.higo.R;
@@ -9,12 +11,13 @@ import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.util.ToastUtil;
 import com.kingja.higo.view.LottieHeadView;
-import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import in.srain.cube.views.ptr.PtrDefaultHandler;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrHandler;
 
 /**
  * Description:TODO
@@ -25,8 +28,9 @@ import butterknife.BindView;
 public class DirectgoFragment extends BaseFragment {
     @BindView(R.id.lv_direct)
     ListView lvDirect;
-    @BindView(R.id.refreshLayout)
-    TwinklingRefreshLayout refreshLayout;
+    @BindView(R.id.store_house_ptr_frame)
+    PtrFrameLayout store_house_ptr_frame;
+
 
     @Override
     protected void initComponent(AppComponent appComponent) {
@@ -37,21 +41,35 @@ public class DirectgoFragment extends BaseFragment {
     protected void initViewAndListener() {
         DirectgoAdapter mDirectgoAdapter = new DirectgoAdapter(getActivity(), new ArrayList<String>());
         lvDirect.setAdapter(mDirectgoAdapter);
-        refreshLayout.setHeaderView(new LottieHeadView(getActivity()));
-        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
+        LottieHeadView lottieHeadView = new LottieHeadView(getActivity());
+        lottieHeadView.setUp(store_house_ptr_frame);
+        store_house_ptr_frame.setHeaderView(lottieHeadView);
+        store_house_ptr_frame.addPtrUIHandler(lottieHeadView);
+        store_house_ptr_frame.setPtrHandler(new PtrHandler() {
             @Override
-            public void onPullDownReleasing(final TwinklingRefreshLayout refreshLayout, float fraction) {
-                ToastUtil.showText("加载网络");
+            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+                Log.e(TAG, "checkCanDoRefresh: ");
+                //检查在当前位置下拉是否可以触发刷新，如果ListView只能在顶部触发
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
+            }
+
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
+                ToastUtil.showText("开始刷新");
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refreshLayout.finishRefreshing();
-                        ToastUtil.showText("结束");
+                        store_house_ptr_frame.refreshComplete();
                     }
-                },2000);
+                }, 2000);
             }
         });
-
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                store_house_ptr_frame.autoRefresh(true);
+            }
+        }, 150);
     }
 
     @Override

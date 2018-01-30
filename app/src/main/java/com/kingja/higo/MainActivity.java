@@ -124,7 +124,7 @@ public class MainActivity extends BaseActivity {
         resetBottom();
         switch (index) {
             case NavConstant.NAV_XIGO:
-                ivNavHigo.setBackgroundResource(R.mipmap.ic_nav_xigo);
+                ivNavHigo.setBackgroundResource(R.mipmap.ic_nav_xigo_sel);
                 tvNavHigo.setTextColor(getResources().getColor(R.color.orange_hi));
                 break;
             case NavConstant.NAV_LOVEGO:
@@ -150,7 +150,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void resetBottom() {
-        ivNavHigo.setBackgroundResource(R.mipmap.ic_nav_xigo);
+        ivNavHigo.setBackgroundResource(R.mipmap.ic_nav_xigo_nor);
         ivNavLovego.setBackgroundResource(R.mipmap.ic_nav_lovego_nor);
         ivNavOrder.setBackgroundResource(R.mipmap.ic_nav_order_nor);
         ivNavMine.setBackgroundResource(R.mipmap.ic_nav_mine_nor);

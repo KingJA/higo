@@ -33,7 +33,7 @@
                 android:id="@+id/iv_nav_higo"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:background="@mipmap/ic_nav_xigo"/>
+                android:background="@mipmap/ic_nav_xigo_sel"/>
 
             <TextView
                 android:id="@+id/tv_nav_higo"

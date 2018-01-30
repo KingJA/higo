@@ -1,15 +1,26 @@
 package com.kingja.higo.view;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.kingja.higo.R;
-import com.lcodecore.tkrefreshlayout.IHeaderView;
-import com.lcodecore.tkrefreshlayout.OnAnimEndListener;
+import com.scwang.smartrefresh.layout.api.RefreshHeader;
+import com.scwang.smartrefresh.layout.api.RefreshKernel;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.RefreshState;
+import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
+
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrUIHandler;
+import in.srain.cube.views.ptr.indicator.PtrIndicator;
+import in.srain.cube.views.ptr.indicator.PtrTensionIndicator;
 
 /**
  * Description:TODO
@@ -17,9 +28,12 @@ import com.lcodecore.tkrefreshlayout.OnAnimEndListener;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class LottieHeadView extends LinearLayout implements IHeaderView {
+public class LottieHeadView extends LinearLayout implements PtrUIHandler {
 
+    private static final String TAG = "LottieHeadView";
     private LottieAnimationView animation_view;
+    private PtrFrameLayout mPtrFrameLayout;
+    private PtrTensionIndicator mPtrTensionIndicator;
 
     public LottieHeadView(Context context) {
         this(context, null);
@@ -31,43 +45,50 @@ public class LottieHeadView extends LinearLayout implements IHeaderView {
 
     public LottieHeadView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+        initView(context);
+        setGravity(Gravity.CENTER);
     }
 
-    private void init() {
-        View rootView = View.inflate(getContext(), R.layout.pull_head, null);
-        animation_view = rootView.findViewById(R.id.animation_view);
-        addView(rootView);
+    private void initView(Context context) {
+        View headView = View.inflate(context, R.layout.pull_head, null);
+        animation_view = headView.findViewById(R.id.animation_view);
+        addView(headView);
     }
 
-    @Override
-    public View getView() {
-        return this;
-    }
-
-    @Override
-    public void onPullingDown(float fraction, float maxHeadHeight, float headHeight) {
-        animation_view.setProgress(fraction);
-
+    public void setUp(PtrFrameLayout ptrFrameLayout) {
+        mPtrFrameLayout = ptrFrameLayout;
+        mPtrTensionIndicator = new PtrTensionIndicator();
+        mPtrFrameLayout.setPtrIndicator(mPtrTensionIndicator);
     }
 
     @Override
-    public void onPullReleasing(float fraction, float maxHeadHeight, float headHeight) {
-
+    public void onUIReset(PtrFrameLayout frame) {
+        Log.e(TAG, "onUIReset: ");
     }
 
     @Override
-    public void startAnim(float maxHeadHeight, float headHeight) {
-
+    public void onUIRefreshPrepare(PtrFrameLayout frame) {
+        Log.e(TAG, "准备刷新: ");
     }
 
     @Override
-    public void onFinish(OnAnimEndListener animEndListener) {
-        animEndListener.onAnimEnd();
+    public void onUIRefreshBegin(PtrFrameLayout frame) {
+        Log.e(TAG, "开始刷新: ");
+        animation_view.loop(true);
+        animation_view.playAnimation();
     }
 
     @Override
-    public void reset() {
+    public void onUIRefreshComplete(PtrFrameLayout frame) {
+        Log.e(TAG, "完成刷新: ");
+        animation_view.pauseAnimation();
+    }
 
+    @Override
+    public void onUIPositionChange(PtrFrameLayout frame, boolean isUnderTouch, byte status, PtrIndicator ptrIndicator) {
+        float overDragPercent = mPtrTensionIndicator.getOverDragPercent();
+        if (overDragPercent < 1) {
+            animation_view.setProgress(overDragPercent);
+        }
     }
 }
