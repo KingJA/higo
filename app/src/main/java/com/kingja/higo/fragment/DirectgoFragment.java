@@ -3,12 +3,15 @@ package com.kingja.higo.fragment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.kingja.higo.R;
+import com.kingja.higo.activity.XigoDetailActivity;
 import com.kingja.higo.adapter.DirectgoAdapter;
 import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.ToastUtil;
 import com.kingja.higo.view.LottieHeadView;
 
@@ -25,7 +28,7 @@ import in.srain.cube.views.ptr.PtrHandler;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class DirectgoFragment extends BaseFragment {
+public class DirectgoFragment extends BaseFragment implements AdapterView.OnItemClickListener {
     @BindView(R.id.lv_direct)
     ListView lvDirect;
     @BindView(R.id.store_house_ptr_frame)
@@ -41,6 +44,7 @@ public class DirectgoFragment extends BaseFragment {
     protected void initViewAndListener() {
         DirectgoAdapter mDirectgoAdapter = new DirectgoAdapter(getActivity(), new ArrayList<String>());
         lvDirect.setAdapter(mDirectgoAdapter);
+        lvDirect.setOnItemClickListener(this);
         LottieHeadView lottieHeadView = new LottieHeadView(getActivity());
         lottieHeadView.setUp(store_house_ptr_frame);
         store_house_ptr_frame.setHeaderView(lottieHeadView);
@@ -82,4 +86,8 @@ public class DirectgoFragment extends BaseFragment {
         return R.layout.frag_xigo_direct;
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        GoUtil.goActivity(getActivity(), XigoDetailActivity.class);
+    }
 }
