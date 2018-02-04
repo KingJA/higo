@@ -30,6 +30,7 @@ public class XigoFragment extends BaseFragment {
     ViewPager vpContentXigo;
     private String[] items = {"直营", "代购"};
     private Fragment mFragmentArr[] = new Fragment[2];
+    private int[] icons = {R.mipmap.ic_scenic, R.mipmap.ic_hotel};
 
     @Override
     protected void initComponent(AppComponent appComponent) {
@@ -50,11 +51,16 @@ public class XigoFragment extends BaseFragment {
 
         mFragmentArr[0] = new DirectgoFragment();
         mFragmentArr[1] = new DirectgoFragment();
-        XigoPageAdapter mHigoPageAdapter = new XigoPageAdapter(getChildFragmentManager(), mFragmentArr,
-                items);
+        XigoPageAdapter mHigoPageAdapter = new XigoPageAdapter(getActivity(),getChildFragmentManager(), mFragmentArr,
+                items,icons);
         vpContentXigo.setAdapter(mHigoPageAdapter);
         vpContentXigo.setOffscreenPageLimit(2);
         tabXigo.setupWithViewPager(vpContentXigo);
+
+        for (int i = 0; i < tabXigo.getTabCount(); i++) {
+            TabLayout.Tab tab = tabXigo.getTabAt(i);
+            tab.setCustomView(mHigoPageAdapter.getTabView(i));
+        }
     }
 
     @Override

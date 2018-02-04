@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.kingja.higo.R;
+import com.kingja.higo.adapter.LovegoPageAdapter;
 import com.kingja.higo.adapter.XigoPageAdapter;
 import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
@@ -57,9 +58,9 @@ public class LovegoFragment extends BaseFragment {
         mFragmentArr[2] = new GiftFragment();
         mFragmentArr[3] = new GiftFragment();
         mFragmentArr[4] = new GiftFragment();
-        XigoPageAdapter mHigoPageAdapter = new XigoPageAdapter(getChildFragmentManager(), mFragmentArr,
+        LovegoPageAdapter mLovegoPageAdapter = new LovegoPageAdapter(getChildFragmentManager(), mFragmentArr,
                 items);
-        vpContentLovego.setAdapter(mHigoPageAdapter);
+        vpContentLovego.setAdapter(mLovegoPageAdapter);
         vpContentLovego.setOffscreenPageLimit(2);
         tabLovego.setupWithViewPager(vpContentLovego);
     }

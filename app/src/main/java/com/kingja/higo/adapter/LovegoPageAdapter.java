@@ -17,18 +17,14 @@ import com.kingja.higo.R;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class XigoPageAdapter extends FragmentPagerAdapter {
-    private final Context context;
+public class LovegoPageAdapter extends FragmentPagerAdapter {
     private Fragment[] fragments;
     private String[] titles;
-    private final int[] icons;
 
-    public XigoPageAdapter(Context context, FragmentManager fm, Fragment[] fragments, String[] titles, int[] icons) {
+    public LovegoPageAdapter(FragmentManager fm, Fragment[] fragments, String[] titles) {
         super(fm);
-        this.context = context;
         this.fragments = fragments;
         this.titles = titles;
-        this.icons = icons;
     }
 
 
@@ -47,12 +43,4 @@ public class XigoPageAdapter extends FragmentPagerAdapter {
         return titles[position];
     }
 
-    public View getTabView(int position) {
-        View view = LayoutInflater.from(context).inflate(R.layout.tab_item, null);
-        TextView tv_tab = (TextView) view.findViewById(R.id.tv_tab);
-        tv_tab.setText(titles[position]);
-        ImageView iv_tab = (ImageView) view.findViewById(R.id.iv_tab);
-        iv_tab.setImageResource(icons[position]);
-        return view;
-    }
 }

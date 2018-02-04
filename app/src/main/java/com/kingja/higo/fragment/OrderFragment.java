@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
 import com.kingja.higo.R;
+import com.kingja.higo.adapter.LovegoPageAdapter;
+import com.kingja.higo.adapter.OrderPageAdapter;
 import com.kingja.higo.adapter.XigoPageAdapter;
 import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
@@ -22,8 +24,8 @@ public class OrderFragment extends BaseFragment {
     TabLayout tabOrder;
     @BindView(R.id.vp_content_order)
     ViewPager vpContentOrder;
-    private String[] items = {"全部", "待付款", "待使用", "已送产品"};
-    private Fragment mFragmentArr[] = new Fragment[4];
+    private String[] items = {"待使用", "待付款", "已完成"};
+    private Fragment mFragmentArr[] = new Fragment[3];
 
 
     @Override
@@ -37,14 +39,12 @@ public class OrderFragment extends BaseFragment {
         tabOrder.addTab(tabOrder.newTab().setText(items[0]));
         tabOrder.addTab(tabOrder.newTab().setText(items[1]));
         tabOrder.addTab(tabOrder.newTab().setText(items[2]));
-        tabOrder.addTab(tabOrder.newTab().setText(items[3]));
-        mFragmentArr[0] = new GiftFragment();
-        mFragmentArr[1] = new GiftFragment();
-        mFragmentArr[2] = new GiftFragment();
-        mFragmentArr[3] = new GiftFragment();
-        XigoPageAdapter mHigoPageAdapter = new XigoPageAdapter(getChildFragmentManager(), mFragmentArr,
+        mFragmentArr[0] = new UnusedFragment();
+        mFragmentArr[1] = new UnusedFragment();
+        mFragmentArr[2] = new UnusedFragment();
+        OrderPageAdapter mOrderPageAdapter = new OrderPageAdapter(getChildFragmentManager(), mFragmentArr,
                 items);
-        vpContentOrder.setAdapter(mHigoPageAdapter);
+        vpContentOrder.setAdapter(mOrderPageAdapter);
         vpContentOrder.setOffscreenPageLimit(2);
         tabOrder.setupWithViewPager(vpContentOrder);
     }
