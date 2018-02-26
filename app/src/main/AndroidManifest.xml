@@ -17,8 +17,37 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!--嘻购详情-->
         <activity
             android:name=".activity.XigoDetailActivity"
+            android:screenOrientation="portrait"/>
+        <!--设置界面-->
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait"/>
+        <!--我的钱包-->
+        <activity
+            android:name=".activity.WalletActivity"
+            android:screenOrientation="portrait"/>
+        <!--我的优惠券-->
+        <activity
+            android:name=".activity.DiscountActivity"
+            android:screenOrientation="portrait"/>
+        <!--我的好友-->
+        <activity
+            android:name=".activity.FriendsActivity"
+            android:screenOrientation="portrait"/>
+        <!--我的订单-->
+        <activity
+            android:name=".activity.OrderActivity"
+            android:screenOrientation="portrait"/>
+        <!--我的消息-->
+        <activity
+            android:name=".activity.MsgActivity"
+            android:screenOrientation="portrait"/>
+        <!--个人信息-->
+        <activity
+            android:name=".activity.PersonalActivity"
             android:screenOrientation="portrait"/>
     </application>
 

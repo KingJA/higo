@@ -4,7 +4,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/orange_hi</item>
         <item name="colorPrimaryDark">@color/orange_hi</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/orange_hi</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

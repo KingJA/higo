@@ -1,6 +1,5 @@
 package com.kingja.higo.fragment;
 
-import android.widget.GridView;
 import android.widget.ListView;
 
 import com.kingja.higo.R;

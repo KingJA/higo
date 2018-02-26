@@ -53,13 +53,18 @@ public class MainActivity extends BaseActivity {
     private int nCurrentPosition = -1;
 
     @Override
+    public void initData() {
+
+    }
+
+    @Override
     public void initVariable() {
 
     }
 
     @Override
-    public int getContentId() {
-        return R.layout.activity_main;
+    public View getContentId() {
+        return View.inflate(this, R.layout.activity_main,null);
     }
 
     @Override
@@ -68,10 +73,11 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void initViewAndListener() {
+    protected void initView() {
         mCurrentFragment = FragmentUtil.getFragment(NavConstant.NAV_XIGO);
         getSupportFragmentManager().beginTransaction().add(R.id.fl_main, mCurrentFragment).commit();
     }
+
 
     @Override
     protected void initNet() {

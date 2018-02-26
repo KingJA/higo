@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_hi"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_hi"
+        android:padding="12dp">
+
+        <TextView
+            style="@style/font_3_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人信息"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+
+    <View style="@style/div_hor_gray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_hi"
+        android:padding="12dp">
+
+        <TextView
+            style="@style/font_3_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改号码"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+
+    <View style="@style/div_hor_gray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_hi"
+        android:padding="12dp">
+
+        <TextView
+            style="@style/font_3_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改密码"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+
+    <View style="@style/div_hor_6_gray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_hi"
+        android:padding="12dp">
+
+        <TextView
+            style="@style/font_3_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="接受消息"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <View style="@style/div_hor_gray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_hi"
+        android:padding="12dp">
+
+        <TextView
+            style="@style/font_3_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="帮助中心"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+
+    <View style="@style/div_hor_gray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_hi"
+        android:padding="12dp">
+
+        <TextView
+            style="@style/font_3_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关于我们"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/arrow_right"/>
+
+    </RelativeLayout>
+
+    <View style="@style/div_hor_gray"/>
+
+</LinearLayout>

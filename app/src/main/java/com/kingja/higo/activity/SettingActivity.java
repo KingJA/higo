@@ -6,11 +6,11 @@ import com.kingja.higo.injector.component.AppComponent;
 
 /**
  * Description:TODO
- * Create Time:2018/2/2 16:25
+ * Create Time:2018/2/26 9:22
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class XigoDetailActivity extends BaseTitleActivity {
+public class SettingActivity extends BaseTitleActivity {
     @Override
     public void initData() {
 
@@ -28,12 +28,12 @@ public class XigoDetailActivity extends BaseTitleActivity {
 
     @Override
     protected String getContentTitle() {
-        return "演出详情";
+        return "设置";
     }
 
     @Override
     protected int getContentView() {
-        return R.layout.activity_xigo_detail;
+        return R.layout.activity_mine_setting;
     }
 
     @Override

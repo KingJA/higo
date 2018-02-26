@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.injector.module.ActivityModule;
@@ -31,10 +32,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getContentId());
         ButterKnife.bind(this);
         initComponent(App.getContext().getAppComponent());
-        initViewAndListener();
+        initView();
+        initData();
         initNet();
         AppManager.getAppManager().addActivity(this);
     }
+
+
 
 
     /*初始化公共组件*/
@@ -59,13 +63,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract void initVariable();
 
     /*获取界面Id*/
-    public abstract int getContentId();
+    public abstract View getContentId();
 
     /*依赖注入*/
     protected abstract void initComponent(AppComponent appComponent);
 
     /*初始化界面和事件*/
-    protected abstract void initViewAndListener();
+    protected abstract void initView();
+    protected abstract void initData();
    /*初始化网络数据*/
     protected abstract void initNet();
 

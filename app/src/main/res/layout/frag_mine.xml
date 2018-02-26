@@ -11,6 +11,7 @@
         android:background="@mipmap/bg_mine">
 
         <ImageView
+            android:id="@+id/iv_mine_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -18,6 +19,7 @@
             android:background="@mipmap/ic_setting"/>
 
         <LinearLayout
+            android:id="@+id/ll_mine_personal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
@@ -67,6 +69,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_mine_discount"
         android:background="@color/white_hi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,6 +107,7 @@
     <View style="@style/div_hor_gray"/>
 
     <RelativeLayout
+        android:id="@+id/rl_mine_wallet"
         android:background="@color/white_hi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -140,6 +144,7 @@
 
     <View style="@style/div_hor_6_gray"/>
     <RelativeLayout
+        android:id="@+id/rl_mine_frined"
         android:background="@color/white_hi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -177,6 +182,7 @@
     <View style="@style/div_hor_gray"/>
 
     <RelativeLayout
+        android:id="@+id/rl_mine_order"
         android:background="@color/white_hi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -212,6 +218,7 @@
     </RelativeLayout>
     <View style="@style/div_hor_6_gray"/>
     <RelativeLayout
+        android:id="@+id/rl_mine_msg"
         android:background="@color/white_hi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
