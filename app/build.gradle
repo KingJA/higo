@@ -10,16 +10,31 @@ android {
         versionName rootProject.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
     buildToolsVersion '26.0.2'
     lintOptions {
         abortOnError false
     }
+    signingConfigs {
+        release {
+            storeFile file("higo.jks")
+            storePassword "tendency2011,tdr"
+            keyAlias "tendency_android.keystore"
+            keyPassword "tendency2011,tdr"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildApkBy()
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
 }
 
 dependencies {
@@ -59,4 +74,18 @@ dependencies {
     implementation 'com.github.iwgang:countdownview:2.1.6'
     implementation 'in.srain.cube:ultra-ptr:1.0.11'
     implementation('com.airbnb.android:lottie:2.2.5') { exclude group: 'com.android.support' }
+}
+
+
+def buildApkBy() {
+    android.applicationVariants.all { variant ->
+        variant.getPackageApplication().outputScope.apkDatas.forEach { apkData ->
+            apkData.outputFileName = rootProject.ext.appName + "_" +
+                    variant.versionName + "_" + releaseTime() + "_" + variant.buildType.name + ".apk"
+        }
+    }
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
