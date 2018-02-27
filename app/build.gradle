@@ -30,7 +30,7 @@ dependencies {
     /*multidex*/
     implementation 'com.android.support:multidex:1.0.2'
     /*debugCompile*/
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    implementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //Logger
     implementation 'com.orhanobut:logger:2.1.1'
