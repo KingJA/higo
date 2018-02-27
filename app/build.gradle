@@ -25,35 +25,35 @@ dependencies {
     implementation "com.android.support:cardview-v7:$rootProject.ext.supportVersion"
     implementation "com.android.support:design:$rootProject.ext.supportVersion"
     /*jakewharton*/
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     /*multidex*/
-    compile 'com.android.support:multidex:1.0.2'
+    implementation 'com.android.support:multidex:1.0.2'
     /*debugCompile*/
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //Logger
-    compile 'com.orhanobut:logger:2.1.1'
+    implementation 'com.orhanobut:logger:2.1.1'
     /*glide*/
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
     /*dagger2*/
-    compile 'com.google.dagger:dagger:2.11'
+    implementation 'com.google.dagger:dagger:2.11'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     //RxJava,RxAndroid
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.4'
-    compile 'org.reactivestreams:reactive-streams:1.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.4'
+    implementation 'org.reactivestreams:reactive-streams:1.0.1'
     //Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     /*supershapeview*/
-    compile 'com.kingja.supershapeview:supershapeview:1.1.1'
+    implementation 'com.kingja.supershapeview:supershapeview:1.1.1'
     /*KingJA's Libraries*/
-    compile 'com.kingja.supershapeview:supershapeview:1.1.2'
-    compile 'com.kingja.loadsir:loadsir:1.3.5'
+    implementation 'com.kingja.supershapeview:supershapeview:1.1.2'
+    implementation 'com.kingja.loadsir:loadsir:1.3.5'
     /*countdownview*/
-    compile 'com.github.iwgang:countdownview:2.1.6'
-    compile 'in.srain.cube:ultra-ptr:1.0.11'
-    compile('com.airbnb.android:lottie:2.2.5') { exclude group: 'com.android.support' }
+    implementation 'com.github.iwgang:countdownview:2.1.6'
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    implementation('com.airbnb.android:lottie:2.2.5') { exclude group: 'com.android.support' }
 }
