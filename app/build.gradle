@@ -7,7 +7,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        versionName APP_VERSION
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildToolsVersion '26.0.2'
@@ -80,8 +80,14 @@ dependencies {
 def buildApkBy() {
     android.applicationVariants.all { variant ->
         variant.getPackageApplication().outputScope.apkDatas.forEach { apkData ->
-            apkData.outputFileName = rootProject.ext.appName + "_" +
-                    variant.versionName + "_" + releaseTime() + "_" + variant.buildType.name + ".apk"
+            def versionName=variant.versionName
+            def buildDate=releaseTime()
+            if ("true" == IS_JENKINS) {
+                versionName=APP_VERSION
+                buildDate=BUILD_DATE
+            }
+                apkData.outputFileName = rootProject.ext.appName + "_" +
+                        versionName + "_" + buildDate + "_" + variant.buildType.name + ".apk"
         }
     }
 }
