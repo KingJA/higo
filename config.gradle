@@ -5,6 +5,6 @@ ext {
     targetSdkVersion = 26
     versionCode = 1
     versionName = "1.0.0"
-    appName = "嘻逛"
+    appName = "higo"
     supportVersion = '26.0.0-beta1'
 }
