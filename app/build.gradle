@@ -1,16 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion COMPILE_SDK_VERSION as int
     defaultConfig {
         applicationId "com.kingja.higo"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName APP_VERSION
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildToolsVersion '26.0.2'
+    buildToolsVersion BUILD_TOOLS_VERSION
     lintOptions {
         abortOnError false
     }
@@ -39,9 +39,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
-    implementation "com.android.support:cardview-v7:$rootProject.ext.supportVersion"
-    implementation "com.android.support:design:$rootProject.ext.supportVersion"
+    implementation "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+    implementation "com.android.support:cardview-v7:${SUPPORT_VERSION}"
+    implementation "com.android.support:design:${SUPPORT_VERSION}"
     /*jakewharton*/
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -86,10 +86,10 @@ def buildApkBy() {
             if ("true" == IS_JENKINS) {
                 versionName = APP_VERSION
                 buildDate = BUILD_DATE
-                buildType = ENVIRONMENT
+                buildType = BUILD_TYPE
                 variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/apk")
             }
-            apkData.outputFileName = rootProject.ext.appName + "_" +
+            apkData.outputFileName = APP_NAME + "_" +
                     versionName + "_" + buildDate + "_" + buildType + ".apk"
         }
     }
