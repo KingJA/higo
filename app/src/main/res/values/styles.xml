@@ -17,5 +17,27 @@
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:layout_marginRight">4dp</item>
     </style>
+
+    <style name="MyEditTextLine" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/gray_hi</item>
+        <item name="colorControlActivated">@color/orange_hi</item>
+    </style>
+
+    <style name="Action_Button">
+        <item name="android:background">@drawable/shape_button</item>
+        <item name="android:textColor">@color/white_hi</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BgNullEditText">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/c_3</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
 </resources>
 

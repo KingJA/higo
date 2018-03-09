@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.kingja.higo.R;
 import com.kingja.higo.activity.DiscountActivity;
 import com.kingja.higo.activity.FriendsActivity;
+import com.kingja.higo.activity.LoginActivity;
 import com.kingja.higo.activity.MsgActivity;
 import com.kingja.higo.activity.OrderActivity;
 import com.kingja.higo.activity.PersonalActivity;
@@ -50,7 +51,7 @@ public class MineFragment extends BaseFragment {
 
 
     @OnClick({R.id.iv_mine_setting, R.id.rl_mine_wallet, R.id.rl_mine_discount, R.id.rl_mine_frined, R.id
-            .rl_mine_order, R.id.rl_mine_msg, R.id.ll_mine_personal})
+            .rl_mine_order, R.id.rl_mine_msg, R.id.ll_mine_personal, R.id.iv_mine_head})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_mine_setting:
@@ -72,6 +73,9 @@ public class MineFragment extends BaseFragment {
                 GoUtil.goActivity(getActivity(), MsgActivity.class);
                 break;
             case R.id.ll_mine_personal:
+                GoUtil.goActivity(getActivity(), LoginActivity.class);
+                break;
+            case R.id.iv_mine_head:
                 GoUtil.goActivity(getActivity(), PersonalActivity.class);
                 break;
             default:

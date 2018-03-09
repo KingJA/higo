@@ -49,6 +49,31 @@
         <activity
             android:name=".activity.PersonalActivity"
             android:screenOrientation="portrait"/>
+        <!--登录-->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <!--注册-->
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <!--找回密码-->
+        <activity
+            android:name=".activity.FindPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <!--修改密码-->
+        <activity
+            android:name=".activity.ModifyPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <!--修改昵称-->
+        <activity
+            android:name=".activity.ModifyNicknameActivity"
+            android:screenOrientation="portrait"/>
+        <!--更换手机号-->
+        <activity
+            android:name=".activity.ModifyPhoneActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
