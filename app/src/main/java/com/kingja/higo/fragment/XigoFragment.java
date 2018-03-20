@@ -1,20 +1,16 @@
 package com.kingja.higo.fragment;
 
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.kingja.higo.R;
 import com.kingja.higo.activity.PayActivity;
-import com.kingja.higo.activity.ShopCartActivity;
+import com.kingja.higo.activity.PayActivity2;
 import com.kingja.higo.adapter.SpinerAdapter;
 import com.kingja.higo.adapter.XigoPageAdapter;
 import com.kingja.higo.base.BaseFragment;
@@ -26,9 +22,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 /**
  * Description:TODO
@@ -69,7 +63,7 @@ public class XigoFragment extends BaseFragment {
                 break;
             case R.id.iv_shopCart:
 //                GoUtil.goActivity(getActivity(), ShopCartActivity.class);
-                GoUtil.goActivity(getActivity(), PayActivity.class);
+                GoUtil.goActivity(getActivity(), PayActivity2.class);
                 break;
             default:
                 break;

@@ -28,7 +28,7 @@ public class PayActivity extends BaseTitleActivity {
 
     @Override
     protected int getContentView() {
-        return R.layout.activity_pay;
+        return R.layout.activity_pay2;
     }
 
     @Override
