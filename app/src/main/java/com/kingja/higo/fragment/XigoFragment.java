@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 
 import com.kingja.higo.R;
 import com.kingja.higo.activity.PayActivity;
-import com.kingja.higo.activity.PayActivity2;
 import com.kingja.higo.adapter.SpinerAdapter;
 import com.kingja.higo.adapter.XigoPageAdapter;
 import com.kingja.higo.base.BaseFragment;
@@ -63,7 +62,7 @@ public class XigoFragment extends BaseFragment {
                 break;
             case R.id.iv_shopCart:
 //                GoUtil.goActivity(getActivity(), ShopCartActivity.class);
-                GoUtil.goActivity(getActivity(), PayActivity2.class);
+                GoUtil.goActivity(getActivity(), PayActivity.class);
                 break;
             default:
                 break;
