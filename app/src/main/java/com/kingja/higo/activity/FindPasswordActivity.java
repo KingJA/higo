@@ -10,7 +10,7 @@ import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.ToastUtil;
-import com.kingja.supershapeview.SuperShapeTextView;
+import com.kingja.supershapeview.view.SuperShapeTextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;

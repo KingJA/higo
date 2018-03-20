@@ -8,6 +8,7 @@ import com.kingja.higo.adapter.DiscountAdapter;
 import com.kingja.higo.adapter.FriendsAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.ToastUtil;
 
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class FriendsActivity extends BaseTitleActivity {
         setMenuRes(R.mipmap.bg_add, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showText("添加");
+                GoUtil.goActivity(FriendsActivity.this,ContactsActivity.class);
             }
         });
     }

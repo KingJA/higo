@@ -43,10 +43,10 @@ public class SettingActivity extends BaseTitleActivity {
                 GoUtil.goActivity(this, PersonalActivity.class);
                 break;
             case R.id.rl_setting_modifyPhone:
-                GoUtil.goActivity(this, WalletActivity.class);
+                GoUtil.goActivity(this, ModifyPhoneActivity.class);
                 break;
             case R.id.rl_setting_modifyPassword:
-                GoUtil.goActivity(this, DiscountActivity.class);
+                GoUtil.goActivity(this, ModifyPasswordActivity.class);
                 break;
             case R.id.rl_setting_help:
                 GoUtil.goActivity(this, DiscountActivity.class);

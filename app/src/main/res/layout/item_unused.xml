@@ -97,7 +97,7 @@
             </LinearLayout>
 
 
-            <com.kingja.supershapeview.SuperShapeTextView
+            <com.kingja.supershapeview.view.SuperShapeTextView
                 android:layout_gravity="end"
                 android:padding="6dp"
                 app:super_strokeColor="@color/orange_hi"

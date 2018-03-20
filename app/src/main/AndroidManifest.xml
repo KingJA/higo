@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.kingja.higo">
 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <application
         android:name=".base.App"
         android:allowBackup="true"
@@ -13,7 +14,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -72,6 +72,30 @@
         <!--更换手机号-->
         <activity
             android:name=".activity.ModifyPhoneActivity"
+            android:screenOrientation="portrait"/>
+        <!--消息详情-->
+        <activity
+            android:name=".activity.MsgDetailActivity"
+            android:screenOrientation="portrait"/>
+        <!--交易明细-->
+        <activity
+            android:name=".activity.DealListActivity"
+            android:screenOrientation="portrait"/>
+        <!--通讯录-->
+        <activity
+            android:name=".activity.ContactsActivity"
+            android:screenOrientation="portrait"/>
+        <!--领券中心-->
+        <activity
+            android:name=".activity.DiscountCenterActivity"
+            android:screenOrientation="portrait"/>
+        <!--购物车-->
+        <activity
+            android:name=".activity.ShopCartActivity"
+            android:screenOrientation="portrait"/>
+        <!--收银台-->
+        <activity
+            android:name=".activity.PayActivity"
             android:screenOrientation="portrait"/>
 
     </application>

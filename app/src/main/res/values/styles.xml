@@ -12,10 +12,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="CustomCheckbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <style name="RectCheckbox" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/selector_cb</item>
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:layout_marginRight">4dp</item>
+    </style>
+
+    <style name="CircleCheckbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_cb_circle</item>
     </style>
 
     <style name="MyEditTextLine" parent="Theme.AppCompat.Light">

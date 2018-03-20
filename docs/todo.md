@@ -10,3 +10,6 @@
 * 二维码生成
 * 二维码扫描
 * 高斯模糊
+
+
+*  app:cardUseCompatPadding="true"设置后listview中的cardview才会有边距

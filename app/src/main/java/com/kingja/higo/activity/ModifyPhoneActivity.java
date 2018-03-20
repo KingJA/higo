@@ -1,5 +1,6 @@
 package com.kingja.higo.activity;
 
+import com.kingja.higo.R;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
 
@@ -27,7 +28,7 @@ public class ModifyPhoneActivity extends BaseTitleActivity {
 
     @Override
     protected int getContentView() {
-        return 0;
+        return R.layout.activity_modify_phone;
     }
 
     @Override

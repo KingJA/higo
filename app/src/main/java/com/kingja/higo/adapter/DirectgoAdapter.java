@@ -32,7 +32,7 @@ public class DirectgoAdapter extends BaseLvAdapter<String> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.cdv_direct.start(24*60*60*1000); // Millisecond
+        viewHolder.cdv_direct.start(24 * 60 * 60 * 1000); // Millisecond
         return convertView;
     }
 

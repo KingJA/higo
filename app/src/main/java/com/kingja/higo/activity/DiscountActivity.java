@@ -1,17 +1,19 @@
 package com.kingja.higo.activity;
 
-import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.kingja.higo.R;
 import com.kingja.higo.adapter.DiscountAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.util.GoUtil;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Description:TODO
@@ -22,6 +24,13 @@ import butterknife.ButterKnife;
 public class DiscountActivity extends BaseTitleActivity {
     @BindView(R.id.lv_discount)
     ListView lvDiscount;
+    @BindView(R.id.ll_discount_center)
+    LinearLayout llDiscountCenter;
+
+    @OnClick({R.id.ll_discount_center})
+    public void onViewClicked(View view) {
+        GoUtil.goActivity(this, DiscountCenterActivity.class);
+    }
 
     @Override
     public void initData() {
@@ -58,4 +67,5 @@ public class DiscountActivity extends BaseTitleActivity {
     protected void initNet() {
 
     }
+
 }

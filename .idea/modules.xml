@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/higo.iml" filepath="$PROJECT_DIR$/higo.iml" />
-      <module fileurl="file://E:\AndroidStudioProjects\higo\higo.iml" filepath="E:\AndroidStudioProjects\higo\higo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/popsir/popsir.iml" filepath="$PROJECT_DIR$/popsir/popsir.iml" />
     </modules>
   </component>
 </project>

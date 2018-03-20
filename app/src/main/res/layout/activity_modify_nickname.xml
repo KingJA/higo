@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.kingja.supershapeview.SuperShapeEditText
+        <com.kingja.supershapeview.view.SuperShapeEditText
             android:layout_centerVertical="true"
             android:id="@+id/set_modifyNickname"
             style="@style/font_3_13"

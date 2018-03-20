@@ -1,6 +1,8 @@
 package com.kingja.higo.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.kingja.higo.R;
@@ -8,6 +10,7 @@ import com.kingja.higo.adapter.FriendsAdapter;
 import com.kingja.higo.adapter.MsgAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.util.GoUtil;
 
 import java.util.ArrayList;
 
@@ -52,6 +55,12 @@ public class MsgActivity extends BaseTitleActivity {
 
     @Override
     protected void initData() {
+        lvMsg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                GoUtil.goActivity(MsgActivity.this,MsgDetailActivity.class);
+            }
+        });
 
     }
 
@@ -60,10 +69,4 @@ public class MsgActivity extends BaseTitleActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }

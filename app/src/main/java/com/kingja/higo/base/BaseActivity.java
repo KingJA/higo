@@ -44,6 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /*初始化公共组件*/
     private void initCommon() {
         mDialogProgress = new ProgressDialog(this);
+        mDialogProgress.setMessage("加载中");
     }
 
     /*设置圆形进度条*/
