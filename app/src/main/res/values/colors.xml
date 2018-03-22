@@ -6,6 +6,7 @@
 
 
     <color name="orange_hi">#F8601A</color>
+    <color name="orange_hi_light">#FCD2BC</color>
     <color name="green_hi">#64C99F</color>
     <color name="gray_hi">#CCCCCC</color>
     <color name="yellow_hi">#F5EDCF</color>
@@ -18,4 +19,15 @@
     <color name="c_9">#999999</color>
     <color name="half_hi">#33ffffff</color>
     <color name="diver">#dbdbdc</color>
+
+
+
+
+    <color name="custom_header_text">#85B100</color>
+    <color name="custom_selected">#A8D324</color>
+    <color name="custom_background">#F0F8DB</color>
+    <color name="custom_background_today">#FF9105</color>
+    <color name="custom_background_disabled">#F0F8DB</color>
+    <color name="custom_text_selected">#FFFFFFFF</color>
+    <color name="custom_text_inactive">#7f778088</color>
 </resources>

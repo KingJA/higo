@@ -1,1 +1,1 @@
-include ':app', ':popsir'
+include ':app', ':popsir', ':rangebarsir'

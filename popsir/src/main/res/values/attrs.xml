@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PopSpinner">
+        <attr name="spinner_textSize" format="dimension"/>
+        <attr name="spinner_textNorColor" format="color|reference"/>
+        <attr name="spinner_textSelColor" format="color|reference"/>
+        <attr name="spinner_indicatorSelColor" format="color|reference"/>
+        <attr name="spinner_indicatorNorColor" format="color|reference"/>
+        <attr name="spinner_indicatorSzie" format="dimension"/>
+        <attr name="spinner_marginIndicator" format="dimension"/>
+        <attr name="spinner_indicatorText" format="string"/>
+    </declare-styleable>
+</resources>

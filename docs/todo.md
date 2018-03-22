@@ -13,3 +13,5 @@
 
 
 *  app:cardUseCompatPadding="true"设置后listview中的cardview才会有边距
+
+* listpop 最多显示的列表高度
