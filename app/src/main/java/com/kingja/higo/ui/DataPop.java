@@ -1,10 +1,11 @@
 package com.kingja.higo.ui;
 
+import android.content.Context;
 import android.view.View;
 
 import com.kingja.higo.R;
-import com.kingja.popsir.BasePop;
-import com.kingja.popsir.PopConfig;
+import com.kingja.popwindowsir.BasePop;
+import com.kingja.popwindowsir.PopConfig;
 import com.squareup.timessquare.CalendarCellDecorator;
 import com.squareup.timessquare.CalendarPickerView;
 import com.squareup.timessquare.DefaultDayViewAdapter;
@@ -21,8 +22,13 @@ import java.util.Date;
  * Email:kingjavip@gmail.com
  */
 public class DataPop extends BasePop {
-    public DataPop(PopConfig popConfig) {
-        super(popConfig);
+
+    public DataPop(Context context) {
+        super(context);
+    }
+
+    public DataPop(Context context, PopConfig popConfig) {
+        super(context, popConfig);
     }
 
     @Override

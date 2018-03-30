@@ -99,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.kingja.popsir.PopSpinner
+        <com.kingja.popwindowsir.PopSpinner
             android:id="@+id/spiner_show_type"
             android:background="#ffffff"
             android:layout_weight="1"
@@ -113,7 +113,7 @@
             app:spinner_textNorColor="@color/c_3"
             app:spinner_textSelColor="@color/orange_hi"
             app:spinner_textSize="12sp"/>
-        <com.kingja.popsir.PopSpinner
+        <com.kingja.popwindowsir.PopSpinner
             android:id="@+id/spiner_place"
             android:background="#ffffff"
             android:layout_weight="1"
@@ -127,7 +127,7 @@
             app:spinner_textNorColor="@color/c_3"
             app:spinner_textSelColor="@color/orange_hi"
             app:spinner_textSize="12sp"/>
-        <com.kingja.popsir.PopSpinner
+        <com.kingja.popwindowsir.PopSpinner
             android:id="@+id/spiner_date"
             android:background="#ffffff"
             android:layout_weight="1"
@@ -141,7 +141,7 @@
             app:spinner_textNorColor="@color/c_3"
             app:spinner_textSelColor="@color/orange_hi"
             app:spinner_textSize="12sp"/>
-        <com.kingja.popsir.PopSpinner
+        <com.kingja.popwindowsir.PopSpinner
             android:id="@+id/spiner_price"
             android:background="#ffffff"
             android:layout_weight="1"

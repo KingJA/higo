@@ -29,6 +29,11 @@ public class GiftFragment extends BaseFragment {
     GridView gvGift;
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

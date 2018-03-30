@@ -1,7 +1,0 @@
-<resources>
-
-    <style name="PopupTopAnimation" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/spaner_enter</item>
-        <item name="android:windowExitAnimation">@anim/spaner_exit</item>
-    </style>
-</resources>

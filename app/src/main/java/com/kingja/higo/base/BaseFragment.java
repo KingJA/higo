@@ -34,12 +34,15 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initVariable();
         initCommon();
         initComponent(App.getContext().getAppComponent());
         initViewAndListener();
         initNet();
 
     }
+
+    protected abstract void initVariable();
 
     private void initCommon() {
         mDialogProgress = new ProgressDialog(getActivity());

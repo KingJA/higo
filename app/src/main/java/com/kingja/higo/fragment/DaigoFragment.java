@@ -12,6 +12,11 @@ import com.kingja.higo.injector.component.AppComponent;
  */
 public class DaigoFragment extends BaseFragment {
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

@@ -7,8 +7,8 @@ import android.widget.GridView;
 
 import com.kingja.higo.R;
 import com.kingja.higo.adapter.PriceAdapter;
-import com.kingja.popsir.BasePop;
-import com.kingja.popsir.PopConfig;
+import com.kingja.popwindowsir.BasePop;
+import com.kingja.popwindowsir.PopConfig;
 
 import java.util.Arrays;
 
@@ -19,12 +19,13 @@ import java.util.Arrays;
  * Email:kingjavip@gmail.com
  */
 public class PricePop extends BasePop {
-    public PricePop(PopConfig popConfig) {
-        super(popConfig);
-    }
 
     public PricePop(Context context) {
-        this(new PopConfig.Builder(context) .build());
+        super(context);
+    }
+
+    public PricePop(Context context, PopConfig popConfig) {
+        super(context, popConfig);
     }
 
     @Override

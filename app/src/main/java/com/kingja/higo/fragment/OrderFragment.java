@@ -29,6 +29,11 @@ public class OrderFragment extends BaseFragment {
 
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

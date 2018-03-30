@@ -23,6 +23,11 @@ public class ScenicFragment extends BaseFragment {
     ListView lvScenic;
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

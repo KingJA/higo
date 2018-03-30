@@ -22,6 +22,11 @@ public class UnusedFragment extends BaseFragment {
     ListView lv_unused;
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

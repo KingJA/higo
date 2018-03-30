@@ -8,6 +8,7 @@ import android.widget.ListView;
 
 import com.kingja.higo.R;
 import com.kingja.higo.activity.XigoDetailActivity;
+import com.kingja.higo.activity.XigoMultiDetailActivity;
 import com.kingja.higo.adapter.DirectgoAdapter;
 import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
@@ -34,6 +35,11 @@ public class DirectgoFragment extends BaseFragment implements AdapterView.OnItem
     @BindView(R.id.store_house_ptr_frame)
     PtrFrameLayout store_house_ptr_frame;
 
+
+    @Override
+    protected void initVariable() {
+
+    }
 
     @Override
     protected void initComponent(AppComponent appComponent) {
@@ -88,6 +94,6 @@ public class DirectgoFragment extends BaseFragment implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        GoUtil.goActivity(getActivity(), XigoDetailActivity.class);
+        GoUtil.goActivity(getActivity(), XigoMultiDetailActivity.class);
     }
 }

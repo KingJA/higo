@@ -27,6 +27,11 @@ public class GuanggoFragment extends BaseFragment {
     private int[] icons = {R.mipmap.ic_scenic, R.mipmap.ic_hotel};
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

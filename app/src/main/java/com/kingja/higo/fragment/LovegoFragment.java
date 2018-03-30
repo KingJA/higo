@@ -34,6 +34,11 @@ public class LovegoFragment extends BaseFragment {
 
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

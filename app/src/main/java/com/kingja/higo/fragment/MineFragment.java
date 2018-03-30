@@ -30,6 +30,11 @@ public class MineFragment extends BaseFragment {
     ImageView ivMineSetting;
 
     @Override
+    protected void initVariable() {
+
+    }
+
+    @Override
     protected void initComponent(AppComponent appComponent) {
 
     }

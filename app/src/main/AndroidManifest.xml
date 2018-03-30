@@ -97,6 +97,10 @@
         <activity
             android:name=".activity.PayActivity"
             android:screenOrientation="portrait"/>
+        <!--嬉逛分集详情-->
+        <activity
+            android:name=".activity.XigoMultiDetailActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 
