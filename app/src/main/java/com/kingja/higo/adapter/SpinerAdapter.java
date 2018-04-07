@@ -23,7 +23,7 @@ public class SpinerAdapter extends BaseLvAdapter<String> {
 
     @Override
     public View simpleGetView(final int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder;
         if (convertView == null) {
             convertView = View
                     .inflate(context, R.layout.item_spiner, null);

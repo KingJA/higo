@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:padding="12dp">
 
+    <ImageView
+        android:id="@+id/iv_spiner_arrow"
+        android:layout_width="12dp"
+        android:layout_height="8dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@id/tv_spiner"
+        android:background="@mipmap/icon_arrow"
+        android:visibility="gone"/>
     <TextView
         android:id="@+id/tv_spiner"
         style="@style/font_3_13"
@@ -13,14 +22,6 @@
         android:layout_centerInParent="true"
         android:text="东南大剧院"/>
 
-    <ImageView
-        android:visibility="gone"
-        android:background="@mipmap/icon_arrow"
-        android:layout_marginRight="12dp"
-        android:layout_centerVertical="true"
-        android:id="@+id/iv_spiner_arrow"
-        android:layout_width="12dp"
-        android:layout_height="8dp"
-        android:layout_toLeftOf="@id/tv_spiner"/>
 
-</RelativeLayout>
+
+</LinearLayout>
