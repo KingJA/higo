@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.kingja.higo"
         minSdkVersion MIN_SDK_VERSION as int
@@ -85,6 +85,7 @@ dependencies {
     /*lottie*/
     implementation('com.airbnb.android:lottie:2.2.5') { exclude group: 'com.android.support' }
     implementation 'com.squareup:android-times-square:1.6.5@aar'
+    implementation 'com.zhihu.android:matisse:0.4.3'
     implementation project(':rangebarsir')
 }
 

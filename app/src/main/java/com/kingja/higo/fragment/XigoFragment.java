@@ -8,6 +8,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import com.kingja.higo.R;
 import com.kingja.higo.activity.PayActivity;
@@ -123,29 +124,12 @@ public class XigoFragment extends BaseFragment {
             tab.setCustomView(mHigoPageAdapter.getTabView(i));
         }
 
-        PopConfig dataPopConfig = new PopConfig.Builder()
-                .setPopHeight(1000)
-                .build();
-        datePop = new DataPop(getActivity(),dataPopConfig);
-        spinerDate.setOnSpinnerStatusChangedListener(new PopSpinner.OnSpinnerStatusChangedListener() {
-            @Override
-            public void setOnSpinnerStatusChanged(boolean opened) {
-                if (opened) {
-                    datePop.showAsDropDown(llSpinnerRoot);
-                } else {
-                    datePop.dismiss();
-                }
-            }
-        });
+
         new PopHelper.Builder(getActivity())
                 .setAdapter(new SpinerAdapter(getActivity(), Arrays.asList("温州大剧院", "东南剧院", "鹿城文化中心", "温州体院馆")))
                 .setPopSpinner(spinerPlace)
-                .setOnItemClickListener(new PopHelper.OnItemClickListener<String>() {
-                    @Override
-                    public void onItemClick(String item, int position, PopSpinner popSpinner) {
-                        popSpinner.setSelectText(item);
-                        Log.e(TAG, "item: " + item);
-                    }
+                .setOnItemClickListener((PopHelper.OnItemClickListener<String>) (item, position, popSpinner) -> {
+                    popSpinner.setSelectText(item);
                 })
                 .build();
 
@@ -153,68 +137,35 @@ public class XigoFragment extends BaseFragment {
                 .setAdapter(new SpinerAdapter(getActivity(), Arrays.asList("演唱会", "话剧戏剧", "戏曲艺术", "音乐会", "体育赛事",
                         "亲自演出", "休闲展览")))
                 .setPopSpinner(spinerShowType)
-                .setOnItemClickListener(new PopHelper.OnItemClickListener<String>() {
-                    @Override
-                    public void onItemClick(String item, int position, PopSpinner popSpinner) {
-                        popSpinner.setSelectText(item);
-                        Log.e(TAG, "item: " + item);
-                    }
+                .setOnItemClickListener((PopHelper.OnItemClickListener<String>) (item, position, popSpinner) -> {
+                    popSpinner.setSelectText(item);
                 })
                 .build();
-//        placePop = new ListPop(config)
-//                .setAdapter(new SpinerAdapter(getActivity(), Arrays.asList("温州大剧院", "东南剧院", "鹿城文化中心", "温州体院馆")))
-//                .setOnItemClickListener(new ListPop.OnItemClickListener<String>() {
-//                    @Override
-//                    public void onItemClick(String item, int position) {
-//                        spinerPlace.setSelectText(item);
-//                    }
-//                });
-//        spinerPlace.setOnSpinnerStatusChangedListener(new PopSpinner.OnSpinnerStatusChangedListener() {
-//            @Override
-//            public void setOnSpinnerStatusChanged(boolean opened) {
-//                if (opened) {
-//                    placePop.showAsDropDown(llSpinnerRoot);
-//                } else {
-//                    placePop.dismiss();
-//                }
-//            }
-//        });
-//
-//
-//
-//        typePop = new ListPop(config)
-//                .setAdapter(new SpinerAdapter(getActivity(), Arrays.asList("演唱会", "话剧戏剧", "戏曲艺术", "音乐会", "体育赛事",
-//                        "亲自演出", "休闲展览")))
-//                .setOnItemClickListener(new ListPop.OnItemClickListener<String>() {
-//                    @Override
-//                    public void onItemClick(String item, int position) {
-//                        spinerShowType.setSelectText(item);
-//                    }
-//                });
-//
-//        spinerShowType.setOnSpinnerStatusChangedListener(new PopSpinner.OnSpinnerStatusChangedListener() {
-//            @Override
-//            public void setOnSpinnerStatusChanged(boolean opened) {
-//                if (opened) {
-//                    typePop.showAsDropDown(llSpinnerRoot);
-//                } else {
-//                    typePop.dismiss();
-//                }
-//            }
-//        });
-//
 
 
         pricePop = new PricePop(getContext());
-
-        spinerPrice.setOnSpinnerStatusChangedListener(new PopSpinner.OnSpinnerStatusChangedListener() {
-            @Override
-            public void setOnSpinnerStatusChanged(boolean opened) {
-                if (opened) {
-                    pricePop.showAsDropDown(llSpinnerRoot);
-                } else {
-                    pricePop.dismiss();
-                }
+        pricePop.setOnDismissListener(() -> {
+            spinerPrice.close();
+        });
+        spinerPrice.setOnSpinnerStatusChangedListener(opened -> {
+            if (opened) {
+                pricePop.showAsDropDown(llSpinnerRoot);
+            } else {
+                pricePop.dismiss();
+            }
+        });
+        PopConfig dataPopConfig = new PopConfig.Builder()
+                .setPopHeight(1000)
+                .build();
+        datePop = new DataPop(getActivity(),dataPopConfig);
+        datePop.setOnDismissListener(() -> {
+            spinerDate.close();
+        });
+        spinerDate.setOnSpinnerStatusChangedListener(opened -> {
+            if (opened) {
+                datePop.showAsDropDown(llSpinnerRoot);
+            } else {
+                datePop.dismiss();
             }
         });
     }
