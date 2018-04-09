@@ -8,7 +8,7 @@ import com.kingja.higo.injector.module.ApiModule;
 import com.kingja.higo.injector.module.AppModule;
 import com.kingja.higo.injector.module.ImageLoaderModule;
 import com.kingja.higo.injector.module.SharedPreferencesModule;
-import com.kingja.higo.model.Api;
+import com.kingja.higo.model.api.UserApi;
 import com.kingja.higo.util.SharedPreferencesManager;
 
 import javax.inject.Singleton;
@@ -25,7 +25,7 @@ import dagger.Component;
 @Singleton
 @Component(modules = {ApiModule.class, AppModule.class, SharedPreferencesModule.class,ImageLoaderModule.class})
 public interface AppComponent {
-    Api getApi();
+    UserApi getApi();
     SharedPreferencesManager getSharedPreferencesManager();
     Application getApplication();
     IImageLoader getImageLoader();

@@ -19,7 +19,7 @@ import com.squareup.leakcanary.LeakCanary;
  * Create Time：2016/10/14:04
  * Author:KingJA
  * Email:kingjavip@gmail.com
- *
+ * <p>
  * 1.创建全局AppComponent
  * 2.对外提供方法获取AppComponent
  */
@@ -38,7 +38,7 @@ public class App extends MultiDexApplication {
             return;
         }
         LeakCanary.install(this);
-        this.sInstance = this;
+        sInstance = this;
         mSharedPreferences = getSharedPreferences(Constants.APPLICATION_NAME, MODE_PRIVATE);
         setupComponent();
     }
@@ -69,6 +69,6 @@ public class App extends MultiDexApplication {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        MultiDex.install(this) ;/*64K说拜拜*/
+        MultiDex.install(this);/*64K说拜拜*/
     }
 }

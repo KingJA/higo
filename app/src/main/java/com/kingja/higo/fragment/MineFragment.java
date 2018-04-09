@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.kingja.higo.R;
 import com.kingja.higo.activity.DiscountActivity;
 import com.kingja.higo.activity.FriendsActivity;
-import com.kingja.higo.activity.LoginActivity;
+import com.kingja.higo.page.login.LoginActivity;
 import com.kingja.higo.activity.MsgActivity;
 import com.kingja.higo.activity.OrderActivity;
 import com.kingja.higo.activity.PersonalActivity;

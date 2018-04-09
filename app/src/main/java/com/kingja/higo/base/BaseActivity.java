@@ -9,6 +9,7 @@ import android.view.View;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.injector.module.ActivityModule;
 import com.kingja.higo.injector.module.AppModule;
+import com.kingja.higo.rx.RxRe;
 import com.kingja.higo.util.AppManager;
 
 import butterknife.ButterKnife;
@@ -96,6 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        RxRe.getInstance().cancle(this);
         if (mDialogProgress.isShowing()) {
             mDialogProgress.dismiss();
             mDialogProgress = null;

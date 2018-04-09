@@ -1,7 +1,7 @@
 package com.kingja.higo.injector.module;
 
 
-import com.kingja.higo.model.Api;
+import com.kingja.higo.model.api.UserApi;
 
 import javax.inject.Singleton;
 
@@ -19,7 +19,7 @@ import dagger.Provides;
 public class ApiModule {
     @Singleton
     @Provides
-    public Api provideApi() {
-        return new Api();
+    public UserApi provideApi() {
+        return new UserApi();
     }
 }
