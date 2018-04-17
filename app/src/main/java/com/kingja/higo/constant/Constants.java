@@ -9,7 +9,8 @@ package com.kingja.higo.constant;
  */
 public class Constants {
 //    public static String BASE_URL ="http://192.168.1.107/KingJAStore/app/";
-    public static final String BASE_URL ="http://10.1.6.186/";
+//    public static final String BASE_URL ="http://traval.dev.singlook.com:8002/v1/";
+    public static final String BASE_URL ="http://10.1.6.186:8088/";
     public static final int PAGE_SIZE =20;
     public static final String APPLICATION_NAME="KingJA_SP";
     public static final String EXTRA_QUESTION="EXTRA_QUESTION";

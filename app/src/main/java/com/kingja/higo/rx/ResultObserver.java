@@ -1,5 +1,7 @@
 package com.kingja.higo.rx;
 
+import android.util.Log;
+
 import com.kingja.higo.base.BaseView;
 import com.kingja.higo.model.HttpResult;
 import com.kingja.higo.util.ToastUtil;
@@ -14,6 +16,7 @@ import io.reactivex.observers.DefaultObserver;
  * Email:kingjavip@gmail.com
  */
 public abstract class ResultObserver<T> extends DefaultObserver<HttpResult<T>> {
+    private static final String TAG = "ResultObserver";
     private BaseView baseView;
 
     public ResultObserver(BaseView baseView) {
@@ -25,15 +28,18 @@ public abstract class ResultObserver<T> extends DefaultObserver<HttpResult<T>> {
         super.onStart();
         baseView.showLoading();
         RxRe.getInstance().add(baseView, this);
+        Log.e(TAG, "onStart: " );
     }
 
     @Override
     public void onNext(HttpResult<T> httpResult) {
+        Log.e(TAG, "onNext: " );
         baseView.hideLoading();
-        if (httpResult.getResultCode() == 0) {
-            onSuccess(httpResult.getResultData());
+        if (httpResult.getCode() == 0) {
+            onSuccess(httpResult.getData());
         } else {
-            ToastUtil.showText(httpResult.getResultText());
+            ToastUtil.showText(httpResult.getMessage());
+            Log.e(TAG, "httpResult.getMessage(): " +httpResult.getMessage());
         }
     }
 
@@ -42,16 +48,17 @@ public abstract class ResultObserver<T> extends DefaultObserver<HttpResult<T>> {
     @Override
     public void onError(Throwable e) {
         //记录错误
-        Logger.e(e.toString());
+        Log.e(TAG, "onError: "+e.toString() );
         baseView.hideLoading();
     }
 
     @Override
     public void onComplete() {
-
+        Log.e(TAG, "onComplete: " );
     }
 
     public void cancleRequest() {
+        Log.e(TAG, "cancleRequest: " );
         cancel();
     }
 }

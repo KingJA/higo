@@ -3,10 +3,13 @@ package com.kingja.higo.page.login;
 import android.support.annotation.NonNull;
 
 import com.kingja.higo.model.api.UserApi;
-import com.kingja.higo.model.entiy.User;
+import com.kingja.higo.model.entiy.Login;
 import com.kingja.higo.rx.ResultObserver;
 
 import javax.inject.Inject;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 
 /**
@@ -25,12 +28,13 @@ public class LoginPresenter implements LoginContract.Presenter {
     }
 
     @Override
-    public void login(String username, String password) {
+    public void login(String mobile, String password) {
         mView.showLoading();
-        mApi.login(username, password).subscribe(new ResultObserver<User>(mView) {
+        mApi.getUserService().login(mobile, password).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe
+                (new ResultObserver<Login>(mView) {
             @Override
-            protected void onSuccess(User user) {
-                mView.onLoginSuccess(user);
+            protected void onSuccess(Login login) {
+                mView.onLoginSuccess(login);
             }
         });
     }

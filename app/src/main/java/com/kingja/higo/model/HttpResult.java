@@ -8,33 +8,33 @@ package com.kingja.higo.model;
  */
 public class HttpResult<T> {
 
-    private int resultCode;
-    private String resultText;
+    private int code;
+    private String message;
 
-    private T resultData;
+    private T data;
 
-    public int getResultCode() {
-        return resultCode;
+    public int getCode() {
+        return code;
     }
 
-    public void setResultCode(int resultCode) {
-        this.resultCode = resultCode;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public String getResultText() {
-        return resultText;
+    public String getMessage() {
+        return message;
     }
 
-    public void setResultText(String resultText) {
-        this.resultText = resultText;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public T getResultData() {
-        return resultData;
+    public T getData() {
+        return data;
     }
 
-    public void setResultData(T resultData) {
-        this.resultData = resultData;
+    public void setData(T data) {
+        this.data = data;
     }
 
 }

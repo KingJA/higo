@@ -7,10 +7,10 @@ import android.widget.TextView;
 
 import com.kingja.higo.R;
 import com.kingja.higo.activity.FindPasswordActivity;
-import com.kingja.higo.activity.RegisterActivity;
+import com.kingja.higo.page.register.RegisterActivity;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
-import com.kingja.higo.model.entiy.User;
+import com.kingja.higo.model.entiy.Login;
 import com.kingja.higo.util.CheckUtil;
 import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.SharedPreferencesManager;
@@ -113,8 +113,8 @@ public class LoginActivity extends BaseTitleActivity implements LoginContract.Vi
     }
 
     @Override
-    public void onLoginSuccess(User user) {
-        Log.e(TAG, "user: "+user.getUsername() );
+    public void onLoginSuccess(Login login) {
+        Log.e(TAG, "getToken: "+ login.getToken() );
     }
 
 }

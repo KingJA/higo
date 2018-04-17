@@ -58,17 +58,14 @@ public class LottieHeadView extends LinearLayout implements PtrUIHandler {
 
     @Override
     public void onUIReset(PtrFrameLayout frame) {
-        Log.e(TAG, "onUIReset: ");
     }
 
     @Override
     public void onUIRefreshPrepare(PtrFrameLayout frame) {
-        Log.e(TAG, "准备刷新: ");
     }
 
     @Override
     public void onUIRefreshBegin(PtrFrameLayout frame) {
-        Log.e(TAG, "开始刷新: ");
         animation_view.loop(true);
         animation_view.playAnimation();
     }

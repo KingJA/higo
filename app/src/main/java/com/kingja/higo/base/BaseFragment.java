@@ -16,7 +16,7 @@ import butterknife.Unbinder;
 
 /**
  * Created with Android Studio.
- * User: ryan.hoo.j@gmail.com
+ * Login: ryan.hoo.j@gmail.com
  * Date: 3/16/16
  * Time: 12:14 AM
  * Desc: BaseFragment

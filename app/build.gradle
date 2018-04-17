@@ -9,6 +9,7 @@ android {
         versionCode VERSION_CODE as int
         versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildToolsVersion BUILD_TOOLS_VERSION
     lintOptions {
@@ -87,6 +88,8 @@ dependencies {
     implementation 'com.squareup:android-times-square:1.6.5@aar'
     implementation 'com.zhihu.android:matisse:0.4.3'
     implementation project(':rangebarsir')
+    implementation("com.github.hotchemi:permissionsdispatcher:3.2.0"){ exclude group: 'com.android.support' }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.2.0"
 }
 
 
@@ -110,3 +113,14 @@ def buildApkBy() {
 def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
+//configurations.all {
+//
+//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested
+//        if (requested.group == 'com.android.support') {
+//            if (!requested.name.startsWith("multidex")) {
+//                details.useVersion SUPPORT_VERSION
+//            }
+//        }
+//    }
+//}

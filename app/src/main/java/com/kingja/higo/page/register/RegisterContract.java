@@ -1,8 +1,7 @@
-package com.kingja.higo.page.login;
+package com.kingja.higo.page.register;
 
 import com.kingja.higo.base.BasePresenter;
 import com.kingja.higo.base.BaseView;
-import com.kingja.higo.model.entiy.Login;
 
 /**
  * Description：TODO
@@ -10,13 +9,13 @@ import com.kingja.higo.model.entiy.Login;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public interface LoginContract {
+public interface RegisterContract {
     interface View extends BaseView {
-        void onLoginSuccess(Login account);
+        void onRegisterSuccess();
     }
 
     interface Presenter extends BasePresenter<View> {
-        void login(String username, String password);
+        void register(String mobile, String password, String code);
 
     }
 }
