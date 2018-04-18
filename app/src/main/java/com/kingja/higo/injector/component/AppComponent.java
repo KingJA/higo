@@ -7,9 +7,9 @@ import com.kingja.higo.imgaeloader.IImageLoader;
 import com.kingja.higo.injector.module.ApiModule;
 import com.kingja.higo.injector.module.AppModule;
 import com.kingja.higo.injector.module.ImageLoaderModule;
-import com.kingja.higo.injector.module.SharedPreferencesModule;
+import com.kingja.higo.injector.module.SpModule;
 import com.kingja.higo.model.api.UserApi;
-import com.kingja.higo.util.SharedPreferencesManager;
+import com.kingja.higo.util.SpManager;
 
 import javax.inject.Singleton;
 
@@ -23,10 +23,10 @@ import dagger.Component;
  * 修改备注：
  */
 @Singleton
-@Component(modules = {ApiModule.class, AppModule.class, SharedPreferencesModule.class,ImageLoaderModule.class})
+@Component(modules = {ApiModule.class, AppModule.class, SpModule.class,ImageLoaderModule.class})
 public interface AppComponent {
     UserApi getApi();
-    SharedPreferencesManager getSharedPreferencesManager();
+    SpManager getSpManager();
     Application getApplication();
     IImageLoader getImageLoader();
 }

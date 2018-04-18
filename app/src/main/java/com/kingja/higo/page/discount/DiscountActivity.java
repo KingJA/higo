@@ -1,10 +1,11 @@
-package com.kingja.higo.activity;
+package com.kingja.higo.page.discount;
 
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.kingja.higo.R;
+import com.kingja.higo.activity.DiscountCenterActivity;
 import com.kingja.higo.adapter.DiscountAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
@@ -16,7 +17,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Description:TODO
+ * Description:我的优惠券
  * Create Time:2018/2/26 10:33
  * Author:KingJA
  * Email:kingjavip@gmail.com

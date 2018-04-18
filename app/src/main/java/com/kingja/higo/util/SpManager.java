@@ -6,15 +6,15 @@ package com.kingja.higo.util;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class SharedPreferencesManager {
+public class SpManager {
     private SharedPreferencesIO mSharedPreferencesIO;
 
-    public SharedPreferencesManager(SharedPreferencesIO mSharedPreferencesIO) {
+    public SpManager(SharedPreferencesIO mSharedPreferencesIO) {
         this.mSharedPreferencesIO = mSharedPreferencesIO;
     }
 
 
-    private static final String TOKEN = "TOKEN";
+    private static final String TOKEN = "token";
     private static final String NAME = "NAME";
     private static final String ACCOUNT_ID = "ACCOUNT_ID";
     private static final String EMPTY_STRING = "";

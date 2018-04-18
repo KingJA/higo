@@ -2,7 +2,6 @@ package com.kingja.higo.page.register;
 
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,9 +10,9 @@ import android.widget.TextView;
 import com.kingja.higo.R;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
-import com.kingja.higo.page.login.LoginPresenter;
 import com.kingja.higo.util.CheckUtil;
 import com.kingja.higo.util.CountTimer;
+import com.kingja.higo.util.ToastUtil;
 import com.kingja.supershapeview.view.SuperShapeTextView;
 
 import javax.inject.Inject;
@@ -28,7 +27,7 @@ import butterknife.OnClick;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class RegisterActivity extends BaseTitleActivity {
+public class RegisterActivity extends BaseTitleActivity implements RegisterContract.View {
     @BindView(R.id.et_register_mobile)
     EditText etRegisterMobile;
     @BindView(R.id.et_register_code)
@@ -60,11 +59,18 @@ public class RegisterActivity extends BaseTitleActivity {
 
                 break;
             case R.id.tv_register_confirm:
+                register();
                 break;
             default:
                 break;
 
         }
+
+    }
+
+
+    @Override
+    public void initVariable() {
 
     }
 
@@ -78,21 +84,38 @@ public class RegisterActivity extends BaseTitleActivity {
         etRegisterPassword.setSelection(etRegisterPassword.getText().length());
     }
 
+    private void register() {
+        String mobile = etRegisterMobile.getText().toString().trim();
+        String code = etRegisterCode.getText().toString().trim();
+        String password = etRegisterPassword.getText().toString().trim();
+        if (CheckUtil.checkPhoneFormat(mobile) && CheckUtil.checkEmpty(code, "请输入验证码") && CheckUtil.checkEmpty
+                (password, "请输入密码")) {
+            registerPresenter.register(mobile, password, code);
+        }
+    }
+
+
     private void getCode(String mobile) {
         countTimer = new CountTimer(10, stvRegisterGetCode);
         stvRegisterGetCode.setClickable(false);
         countTimer.start();
+        registerPresenter.getCode(mobile, "register");
 
     }
 
     @Override
-    public void initVariable() {
-
+    protected void onDestroy() {
+        super.onDestroy();
+        countTimer.cancel();
     }
+
 
     @Override
     protected void initComponent(AppComponent appComponent) {
-
+        DaggerRegisterCompnent.builder()
+                .appComponent(appComponent)
+                .build()
+                .inject(this);
     }
 
     @Override
@@ -107,7 +130,7 @@ public class RegisterActivity extends BaseTitleActivity {
 
     @Override
     protected void initView() {
-
+        registerPresenter.attachView(this);
     }
 
     @Override
@@ -120,4 +143,24 @@ public class RegisterActivity extends BaseTitleActivity {
 
     }
 
+    @Override
+    public void showLoading() {
+        setProgressShow(true);
+    }
+
+    @Override
+    public void hideLoading() {
+        setProgressShow(false);
+    }
+
+    @Override
+    public void onRegisterSuccess() {
+        ToastUtil.showText("用户注册成功");
+        finish();
+    }
+
+    @Override
+    public void onGetCodeSuccess() {
+        ToastUtil.showText("已发送短信至该手机");
+    }
 }

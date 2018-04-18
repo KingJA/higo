@@ -29,7 +29,6 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     @Override
     public void login(String mobile, String password) {
-        mView.showLoading();
         mApi.getUserService().login(mobile, password).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe
                 (new ResultObserver<Login>(mView) {
             @Override

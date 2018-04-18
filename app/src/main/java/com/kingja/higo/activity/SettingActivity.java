@@ -1,6 +1,5 @@
 package com.kingja.higo.activity;
 
-import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -8,10 +7,11 @@ import android.widget.RelativeLayout;
 import com.kingja.higo.R;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.page.discount.DiscountActivity;
+import com.kingja.higo.page.modifypassword.ModifyPasswordActivity;
 import com.kingja.higo.util.GoUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

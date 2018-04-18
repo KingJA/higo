@@ -1,7 +1,10 @@
-package com.kingja.higo.page.register;
+package com.kingja.higo.page.message;
 
 import com.kingja.higo.base.BasePresenter;
 import com.kingja.higo.base.BaseView;
+import com.kingja.higo.model.entiy.Message;
+
+import java.util.List;
 
 /**
  * Description：TODO
@@ -9,17 +12,13 @@ import com.kingja.higo.base.BaseView;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public interface RegisterContract {
+public interface MessageContract {
     interface View extends BaseView {
-        void onRegisterSuccess();
-
-        void onGetCodeSuccess();
+        void onGetMessageSuccess(List<Message> messages);
     }
 
     interface Presenter extends BasePresenter<View> {
-        void register(String mobile, String password, String code);
-
-        void getCode(String mobile, String type);
+        void getMessage();
 
     }
 }

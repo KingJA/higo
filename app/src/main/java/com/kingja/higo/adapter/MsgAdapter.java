@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kingja.higo.R;
+import com.kingja.higo.model.entiy.Message;
 
 import java.util.List;
 
@@ -14,8 +15,8 @@ import java.util.List;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class MsgAdapter extends BaseLvAdapter<String> {
-    public MsgAdapter(Context context, List<String> list) {
+public class MsgAdapter extends BaseLvAdapter<Message> {
+    public MsgAdapter(Context context, List<Message> list) {
         super(context, list);
     }
 
@@ -35,7 +36,7 @@ public class MsgAdapter extends BaseLvAdapter<String> {
 
     @Override
     public int getCount() {
-        return 27;
+        return list.size();
     }
 
     public class ViewHolder {

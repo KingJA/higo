@@ -10,6 +10,7 @@ import com.kingja.higo.R;
 import com.kingja.higo.injector.component.AppComponent;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Description：TODO
@@ -21,6 +22,7 @@ public abstract class BaseTitleActivity extends BaseActivity {
 
     protected View rootView;
     private TextView tvTitleTitle;
+    private Unbinder bind;
 
 
     @Override
@@ -30,22 +32,25 @@ public abstract class BaseTitleActivity extends BaseActivity {
         tvTitleTitle = rootView.findViewById(R.id.tv_title_title);
         LinearLayout llTitleBack = rootView.findViewById(R.id.ll_title_back);
         tvTitleTitle.setText(getContentTitle() == null ? "" : getContentTitle());
-        llTitleBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        llTitleBack.setOnClickListener(v -> finish());
         View content = View.inflate(this, getContentView(), null);
         if (content != null) {
             FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
                     FrameLayout.LayoutParams.MATCH_PARENT);
             flContent.addView(content, params);
-            ButterKnife.bind(this, rootView);
+            bind = ButterKnife.bind(this, rootView);
             // register after ButterKnife.bind()
 
         }
         return rootView;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bind != null) {
+            bind.unbind();
+        }
     }
 
     public void setContentTitle(String title) {

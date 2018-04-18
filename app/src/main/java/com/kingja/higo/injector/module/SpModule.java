@@ -4,7 +4,9 @@ import android.app.Application;
 
 
 import com.kingja.higo.util.SharedPreferencesIO;
-import com.kingja.higo.util.SharedPreferencesManager;
+import com.kingja.higo.util.SpManager;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -17,18 +19,18 @@ import dagger.Provides;
  * 修改备注：
  */
 @Module
-public class SharedPreferencesModule {
-    public SharedPreferencesModule() {
+public class SpModule {
+
+    public SpModule() {
     }
 
     @Provides
-    public SharedPreferencesIO provideSharedPreferencesIO(Application application) {
+    public SharedPreferencesIO provideSpIO(Application application) {
         return new SharedPreferencesIO(application);
     }
 
     @Provides
-    public SharedPreferencesManager provideSharedPreferencesManager(SharedPreferencesIO sharedPreferencesIO) {
-        return new SharedPreferencesManager(sharedPreferencesIO);
+    public SpManager provideSpManager(SharedPreferencesIO sharedPreferencesIO) {
+        return new SpManager(sharedPreferencesIO);
     }
-
 }

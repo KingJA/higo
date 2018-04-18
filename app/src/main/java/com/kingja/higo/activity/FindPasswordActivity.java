@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.kingja.higo.R;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.page.modifypassword.ModifyPasswordActivity;
 import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.ToastUtil;
 import com.kingja.supershapeview.view.SuperShapeTextView;

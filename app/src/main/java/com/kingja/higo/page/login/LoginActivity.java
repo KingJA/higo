@@ -13,7 +13,8 @@ import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.model.entiy.Login;
 import com.kingja.higo.util.CheckUtil;
 import com.kingja.higo.util.GoUtil;
-import com.kingja.higo.util.SharedPreferencesManager;
+import com.kingja.higo.util.SpManager;
+import com.orhanobut.logger.Logger;
 
 import javax.inject.Inject;
 
@@ -30,7 +31,7 @@ public class LoginActivity extends BaseTitleActivity implements LoginContract.Vi
     @Inject
     LoginPresenter mLoginPresenter;
     @Inject
-    SharedPreferencesManager mSharedPreferencesManager;
+    SpManager mSpManager;
     @BindView(R.id.et_login_name)
     EditText etLoginName;
     @BindView(R.id.et_login_password)
@@ -51,7 +52,6 @@ public class LoginActivity extends BaseTitleActivity implements LoginContract.Vi
     protected void initComponent(AppComponent appComponent) {
         DaggerLoginCompnent.builder()
                 .appComponent(appComponent)
-                .activityModule(getActivityModule())
                 .build()
                 .inject(this);
     }

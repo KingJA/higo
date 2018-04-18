@@ -27,6 +27,14 @@ public class CheckUtil {
         return true;
     }
 
+    public static boolean checkSame(String s1,String s2, String tip) {
+        if (!s1.equals(s2)) {
+            ToastUtil.showText(tip);
+            return false;
+        }
+        return true;
+    }
+
     /**
      * 验证是否以0开始
      * @param s

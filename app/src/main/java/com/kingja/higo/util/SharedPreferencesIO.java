@@ -17,15 +17,7 @@ public class SharedPreferencesIO {
                 Context.MODE_PRIVATE);
     }
 
-
-    /**
-     * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
-     *
-     * @param key
-     * @param object
-     */
     public  void put(String key, Object object) {
-
         String type = object.getClass().getSimpleName();
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -40,18 +32,10 @@ public class SharedPreferencesIO {
         } else if ("Long".equals(type)) {
             editor.putLong(key, (Long) object);
         }
-
         editor.commit();
     }
 
 
-    /**
-     * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
-     *
-     * @param key
-     * @param defaultObject
-     * @return
-     */
     public Object get(String key, Object defaultObject) {
         String type = defaultObject.getClass().getSimpleName();
 
