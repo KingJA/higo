@@ -35,7 +35,7 @@ public class ShopcartAdapter extends BaseLvAdapter<String> {
 
     @Override
     public int getCount() {
-        return 20;
+        return 0;
     }
 
 

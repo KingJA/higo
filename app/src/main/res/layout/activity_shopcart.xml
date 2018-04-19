@@ -67,7 +67,7 @@
                 style="@style/font_orange_16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="125"/>
+                android:text="0"/>
         </LinearLayout>
 
         <LinearLayout
@@ -88,7 +88,7 @@
                 style="@style/font_f_18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="125"/>
+                android:text="0"/>
 
             <TextView
                 style="@style/font_f_18"

@@ -6,9 +6,12 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
 import com.kingja.higo.callback.EmptyCallback;
-import com.kingja.higo.callback.ErrorCallback;
+import com.kingja.higo.callback.EmptyCartCallback;
+import com.kingja.higo.callback.EmptyDealCallback;
+import com.kingja.higo.callback.EmptyMsgCallback;
+import com.kingja.higo.callback.EmptyOrderCallback;
+import com.kingja.higo.callback.ErrorNetworkCallback;
 import com.kingja.higo.callback.LoadingCallback;
-import com.kingja.higo.callback.TimeoutCallback;
 import com.kingja.higo.constant.Constants;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.injector.component.DaggerAppComponent;
@@ -26,9 +29,6 @@ import com.squareup.leakcanary.LeakCanary;
  * Create Time：2016/10/14:04
  * Author:KingJA
  * Email:kingjavip@gmail.com
- * <p>
- * 1.创建全局AppComponent
- * 2.对外提供方法获取AppComponent
  */
 public class App extends MultiDexApplication {
     private static App sInstance;
@@ -54,10 +54,13 @@ public class App extends MultiDexApplication {
 
     private void initLoadSir() {
         LoadSir.beginBuilder()
-                .addCallback(new ErrorCallback())
+                .addCallback(new ErrorNetworkCallback())
                 .addCallback(new EmptyCallback())
                 .addCallback(new LoadingCallback())
-                .addCallback(new TimeoutCallback())
+                .addCallback(new EmptyCartCallback())
+                .addCallback(new EmptyOrderCallback())
+                .addCallback(new EmptyMsgCallback())
+                .addCallback(new EmptyDealCallback())
                 .commit();
     }
 

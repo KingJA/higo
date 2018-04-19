@@ -12,9 +12,9 @@ import com.kingja.loadsir.callback.Callback;
  * Email:kingjavip@gmail.com
  */
 
-public class ErrorCallback extends Callback {
+public class ErrorNetworkCallback extends Callback {
     @Override
     protected int onCreateView() {
-        return R.layout.layout_error;
+        return R.layout.layout_error_network;
     }
 }

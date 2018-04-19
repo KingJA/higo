@@ -9,6 +9,7 @@ import com.kingja.higo.activity.MsgDetailActivity;
 import com.kingja.higo.adapter.MsgAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.callback.EmptyCallback;
+import com.kingja.higo.callback.EmptyMsgCallback;
 import com.kingja.higo.callback.LoadingCallback;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.model.entiy.Message;
@@ -84,7 +85,8 @@ public class MsgActivity extends BaseTitleActivity implements MessageContract.Vi
 
     @Override
     protected void initNet() {
-        messagePresenter.getMessage();
+//        messagePresenter.getMessage();
+        loadService.showCallback(EmptyMsgCallback.class);
     }
 
     @Override
@@ -101,7 +103,7 @@ public class MsgActivity extends BaseTitleActivity implements MessageContract.Vi
     public void onGetMessageSuccess(List<Message> messages) {
         Logger.e("消息数" + messages.size());
         if (messages.size() == 0) {
-            loadService.showCallback(EmptyCallback.class);
+            loadService.showCallback(EmptyMsgCallback.class);
         } else {
             loadService.showSuccess();
             mMsgAdapter.setData(messages);
