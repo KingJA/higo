@@ -17,8 +17,8 @@ public class Login {
      */
 
     private String token;
-    private String uid;
-    private int expires_in;
+    private int uid;
+    private String expires_in;
 
     public String getToken() {
         return token;
@@ -28,19 +28,19 @@ public class Login {
         this.token = token;
     }
 
-    public String getUid() {
+    public int getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
+    public void setUid(int uid) {
         this.uid = uid;
     }
 
-    public int getExpires_in() {
+    public String getExpires_in() {
         return expires_in;
     }
 
-    public void setExpires_in(int expires_in) {
+    public void setExpires_in(String expires_in) {
         this.expires_in = expires_in;
     }
 }

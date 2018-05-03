@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.kingja.higo.R;
 import com.kingja.higo.base.BaseTitleActivity;
+import com.kingja.higo.constant.VariableConstant;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.util.CheckUtil;
 import com.kingja.higo.util.CountTimer;
@@ -99,14 +100,16 @@ public class RegisterActivity extends BaseTitleActivity implements RegisterContr
         countTimer = new CountTimer(10, stvRegisterGetCode);
         stvRegisterGetCode.setClickable(false);
         countTimer.start();
-        registerPresenter.getCode(mobile, "register");
+        registerPresenter.getCode(mobile, VariableConstant.SmsType.REGISTER);
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        countTimer.cancel();
+        if (countTimer != null) {
+            countTimer.cancel();
+        }
     }
 
 
@@ -161,6 +164,6 @@ public class RegisterActivity extends BaseTitleActivity implements RegisterContr
 
     @Override
     public void onGetCodeSuccess() {
-        ToastUtil.showText("已发送短信至该手机");
+        ToastUtil.showText("已发送验证码至该手机");
     }
 }

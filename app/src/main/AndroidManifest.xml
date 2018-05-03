@@ -2,10 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.kingja.higo">
 
+    <!--网络访问-->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!--读取联系人-->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!--本地SD卡读写-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--相机-->
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
@@ -32,7 +36,7 @@
             android:screenOrientation="portrait"/>
         <!--我的钱包-->
         <activity
-            android:name=".activity.WalletActivity"
+            android:name=".page.wallet.WalletActivity"
             android:screenOrientation="portrait"/>
         <!--我的优惠券-->
         <activity
@@ -40,7 +44,7 @@
             android:screenOrientation="portrait"/>
         <!--我的好友-->
         <activity
-            android:name=".activity.FriendsActivity"
+            android:name=".page.mine_friends.MineFriendsActivity"
             android:screenOrientation="portrait"/>
         <!--我的订单-->
         <activity
@@ -48,7 +52,7 @@
             android:screenOrientation="portrait"/>
         <!--我的消息-->
         <activity
-            android:name=".page.message.MsgActivity"
+            android:name=".page.message.MessageActivity"
             android:screenOrientation="portrait"/>
         <!--个人信息-->
         <activity
@@ -64,16 +68,13 @@
             android:name=".page.register.RegisterActivity"
             android:screenOrientation="portrait"/>
         <!--找回密码-->
-        <activity
-            android:name=".activity.FindPasswordActivity"
-            android:screenOrientation="portrait"/>
         <!--修改密码-->
         <activity
             android:name=".page.modifypassword.ModifyPasswordActivity"
             android:screenOrientation="portrait"/>
         <!--修改昵称-->
         <activity
-            android:name=".activity.ModifyNicknameActivity"
+            android:name=".page.modify_nickname.ModifyNicknameActivity"
             android:screenOrientation="portrait"/>
         <!--更换手机号-->
         <activity
@@ -85,7 +86,7 @@
             android:screenOrientation="portrait"/>
         <!--交易明细-->
         <activity
-            android:name=".activity.DealListActivity"
+            android:name=".page.deallist.DealListActivity"
             android:screenOrientation="portrait"/>
         <!--通讯录-->
         <activity
@@ -106,6 +107,10 @@
         <!--嬉逛分集详情-->
         <activity
             android:name=".activity.XigoMultiDetailActivity"
+            android:screenOrientation="portrait"/>
+        <!--找回密码-->
+        <activity
+            android:name=".page.forgetpassword.ForgetPasswordActivity"
             android:screenOrientation="portrait"/>
 
     </application>

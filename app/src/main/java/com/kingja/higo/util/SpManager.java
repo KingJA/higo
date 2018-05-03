@@ -17,7 +17,9 @@ public class SpManager {
     private static final String TOKEN = "token";
     private static final String NAME = "NAME";
     private static final String ACCOUNT_ID = "ACCOUNT_ID";
+    private static final String UID = "uid";
     private static final String EMPTY_STRING = "";
+    private static final long EMPTY_LONG = 0L;
 
     /*================================GET================================*/
     public String getName() {
@@ -32,9 +34,24 @@ public class SpManager {
         return (String) mSharedPreferencesIO.get(TOKEN, EMPTY_STRING);
     }
 
-
+    public String getUID() {
+        return (String) mSharedPreferencesIO.get(UID, EMPTY_STRING);
+    }
 
     /*================================PUT================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void putName(String name) {
         mSharedPreferencesIO.put(NAME, name);
@@ -46,6 +63,9 @@ public class SpManager {
 
     public void putAccountId(long accountId) {
         mSharedPreferencesIO.put(ACCOUNT_ID, accountId);
+    }
+    public void putUID(String uid) {
+        mSharedPreferencesIO.put(UID, uid);
     }
 
 

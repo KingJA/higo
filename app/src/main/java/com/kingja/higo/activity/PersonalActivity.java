@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.kingja.higo.R;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.page.modify_nickname.ModifyNicknameActivity;
 import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.ToastUtil;
 import com.zhihu.matisse.Matisse;

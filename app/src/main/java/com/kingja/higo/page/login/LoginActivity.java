@@ -6,7 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.kingja.higo.R;
-import com.kingja.higo.activity.FindPasswordActivity;
+import com.kingja.higo.page.forgetpassword.ForgetPasswordActivity;
 import com.kingja.higo.page.register.RegisterActivity;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
@@ -14,7 +14,6 @@ import com.kingja.higo.model.entiy.Login;
 import com.kingja.higo.util.CheckUtil;
 import com.kingja.higo.util.GoUtil;
 import com.kingja.higo.util.SpManager;
-import com.orhanobut.logger.Logger;
 
 import javax.inject.Inject;
 
@@ -85,7 +84,7 @@ public class LoginActivity extends BaseTitleActivity implements LoginContract.Vi
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_login_findPassword:
-                GoUtil.goActivity(this, FindPasswordActivity.class);
+                GoUtil.goActivity(this, ForgetPasswordActivity.class);
                 break;
             case R.id.tv_login_register:
                 GoUtil.goActivity(this, RegisterActivity.class);
@@ -115,6 +114,9 @@ public class LoginActivity extends BaseTitleActivity implements LoginContract.Vi
     @Override
     public void onLoginSuccess(Login login) {
         Log.e(TAG, "getToken: "+ login.getToken() );
+        mSpManager.putToken(login.getToken());
+        mSpManager.putUID(login.getUid()+"");
+        finish();
     }
 
 }

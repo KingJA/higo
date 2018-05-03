@@ -1,5 +1,6 @@
 package com.kingja.higo;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -15,7 +16,10 @@ import com.kingja.higo.util.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
+@RuntimePermissions
 public class MainActivity extends BaseActivity {
 
     @BindView(R.id.iv_nav_higo)
@@ -59,12 +63,22 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initVariable() {
+        MainActivityPermissionsDispatcher.checkPermissionsWithPermissionCheck(this);
+        checkPermissions();
 
     }
 
+    @NeedsPermission({Manifest.permission.CAMERA, Manifest.permission.READ_CONTACTS, Manifest.permission
+            .READ_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION})
+    public void checkPermissions() {
+
+    }
+
+
+
     @Override
     public View getContentId() {
-        return View.inflate(this, R.layout.activity_main,null);
+        return View.inflate(this, R.layout.activity_main, null);
     }
 
     @Override

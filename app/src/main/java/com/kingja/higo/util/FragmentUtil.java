@@ -9,7 +9,7 @@ import com.kingja.higo.R;
 import com.kingja.higo.fragment.GuanggoFragment;
 import com.kingja.higo.fragment.OrderFragment;
 import com.kingja.higo.fragment.LovegoFragment;
-import com.kingja.higo.fragment.MineFragment;
+import com.kingja.higo.page.mine.MineFragment;
 import com.kingja.higo.fragment.XigoFragment;
 
 import java.util.HashMap;

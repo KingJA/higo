@@ -8,10 +8,18 @@ import com.kingja.higo.R;
 import com.kingja.higo.activity.DiscountCenterActivity;
 import com.kingja.higo.adapter.DiscountAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
+import com.kingja.higo.callback.EmptyMsgCallback;
 import com.kingja.higo.injector.component.AppComponent;
+import com.kingja.higo.model.entiy.Discount;
 import com.kingja.higo.util.GoUtil;
+import com.kingja.loadsir.callback.Callback;
+import com.kingja.loadsir.core.LoadService;
+import com.kingja.loadsir.core.LoadSir;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -22,11 +30,17 @@ import butterknife.OnClick;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class DiscountActivity extends BaseTitleActivity {
+public class DiscountActivity extends BaseTitleActivity implements DiscountContract.View {
     @BindView(R.id.lv_discount)
     ListView lvDiscount;
     @BindView(R.id.ll_discount_center)
     LinearLayout llDiscountCenter;
+
+    @Inject
+   DiscountPresenter discountPresenter;
+    private DiscountAdapter mDiscountAdapter;
+    private List<Discount> discounts = new ArrayList<>();
+    private LoadService loadService;
 
     @OnClick({R.id.ll_discount_center})
     public void onViewClicked(View view) {
@@ -45,7 +59,10 @@ public class DiscountActivity extends BaseTitleActivity {
 
     @Override
     protected void initComponent(AppComponent appComponent) {
-
+        DaggerDiscountCompnent.builder()
+                .appComponent(appComponent)
+                .build()
+                .inject(this);
     }
 
     @Override
@@ -60,13 +77,34 @@ public class DiscountActivity extends BaseTitleActivity {
 
     @Override
     protected void initView() {
-        DiscountAdapter mDiscountAdapter = new DiscountAdapter(this, new ArrayList<String>());
+        discountPresenter.attachView(this);
+        mDiscountAdapter = new DiscountAdapter(this, discounts);
         lvDiscount.setAdapter(mDiscountAdapter);
+        loadService = LoadSir.getDefault().register(lvDiscount, (Callback.OnReloadListener) v -> initNet());
     }
 
     @Override
     protected void initNet() {
-
+        discountPresenter.getDiscount();
     }
 
+    @Override
+    public void showLoading() {
+        setProgressShow(true);
+    }
+
+    @Override
+    public void hideLoading() {
+        setProgressShow(false);
+    }
+
+    @Override
+    public void onGetDiscountSuccess(List<Discount> discounts) {
+        if (discounts.size() == 0) {
+            loadService.showCallback(EmptyMsgCallback.class);
+        } else {
+            loadService.showSuccess();
+            mDiscountAdapter.setData(discounts);
+        }
+    }
 }

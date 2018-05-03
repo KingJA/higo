@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kingja.higo.R;
+import com.kingja.higo.model.entiy.Discount;
 
 import java.util.List;
 
@@ -14,8 +15,8 @@ import java.util.List;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class DiscountAdapter extends BaseLvAdapter<String> {
-    public DiscountAdapter(Context context, List<String> list) {
+public class DiscountAdapter extends BaseLvAdapter<Discount> {
+    public DiscountAdapter(Context context, List<Discount> list) {
         super(context, list);
     }
 
@@ -31,11 +32,6 @@ public class DiscountAdapter extends BaseLvAdapter<String> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         return convertView;
-    }
-
-    @Override
-    public int getCount() {
-        return 27;
     }
 
     public class ViewHolder {

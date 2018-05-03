@@ -50,7 +50,7 @@ public abstract class BaseFragment extends Fragment {
     /*设置圆形进度条*/
     protected void setProgressShow(boolean ifShow) {
         if (ifShow) {
-            ProgressDialog.show(getActivity(), "", "加载中", true, true);
+            mDialogProgress.show();
         } else {
             mDialogProgress.dismiss();
         }

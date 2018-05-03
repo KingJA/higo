@@ -40,10 +40,11 @@
                     android:text="¥"/>
 
                 <TextView
+                    android:id="@+id/tv_wallet_money"
                     style="@style/font_f_33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="250.58"/>
+                    android:text="_.__"/>
 
 
             </LinearLayout>

@@ -9,5 +9,5 @@ import dagger.Component;
 @PerActivity
 @Component(dependencies = AppComponent.class)
 public interface MessageCompnent {
-    void inject(MsgActivity activity);
+    void inject(MessageActivity activity);
 }

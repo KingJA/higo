@@ -13,7 +13,8 @@
 
         <com.kingja.supershapeview.view.SuperShapeEditText
             android:layout_centerVertical="true"
-            android:id="@+id/set_modifyNickname"
+            android:maxLength="20"
+            android:id="@+id/set_nickname"
             style="@style/font_3_13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +29,8 @@
             app:super_strokeWidth="1px"/>
 
         <ImageView
-            android:id="@+id/iv_modifyNickname_clear"
+            android:visibility="gone"
+            android:id="@+id/iv_nickname_clear"
             android:layout_marginRight="12dp"
             android:background="@mipmap/icon_input_clear"
             android:layout_centerVertical="true"

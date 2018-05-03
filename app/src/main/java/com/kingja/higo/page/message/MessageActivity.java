@@ -8,9 +8,7 @@ import com.kingja.higo.R;
 import com.kingja.higo.activity.MsgDetailActivity;
 import com.kingja.higo.adapter.MsgAdapter;
 import com.kingja.higo.base.BaseTitleActivity;
-import com.kingja.higo.callback.EmptyCallback;
 import com.kingja.higo.callback.EmptyMsgCallback;
-import com.kingja.higo.callback.LoadingCallback;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.model.entiy.Message;
 import com.kingja.higo.util.GoUtil;
@@ -33,7 +31,7 @@ import butterknife.OnItemClick;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class MsgActivity extends BaseTitleActivity implements MessageContract.View {
+public class MessageActivity extends BaseTitleActivity implements MessageContract.View {
     @BindView(R.id.lv_msg)
     ListView lvMsg;
     @Inject
@@ -75,7 +73,7 @@ public class MsgActivity extends BaseTitleActivity implements MessageContract.Vi
 
     @OnItemClick(R.id.lv_msg)
     public void itemClick(AdapterView<?> parent, View view, int position, long id) {
-        GoUtil.goActivity(MsgActivity.this, MsgDetailActivity.class);
+        GoUtil.goActivity(MessageActivity.this, MsgDetailActivity.class);
     }
 
     @Override
@@ -85,8 +83,7 @@ public class MsgActivity extends BaseTitleActivity implements MessageContract.Vi
 
     @Override
     protected void initNet() {
-//        messagePresenter.getMessage();
-        loadService.showCallback(EmptyMsgCallback.class);
+        messagePresenter.getMessage();
     }
 
     @Override
@@ -101,7 +98,6 @@ public class MsgActivity extends BaseTitleActivity implements MessageContract.Vi
 
     @Override
     public void onGetMessageSuccess(List<Message> messages) {
-        Logger.e("消息数" + messages.size());
         if (messages.size() == 0) {
             loadService.showCallback(EmptyMsgCallback.class);
         } else {

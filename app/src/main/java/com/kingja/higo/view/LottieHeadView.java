@@ -72,7 +72,6 @@ public class LottieHeadView extends LinearLayout implements PtrUIHandler {
 
     @Override
     public void onUIRefreshComplete(PtrFrameLayout frame) {
-        Log.e(TAG, "完成刷新: ");
         animation_view.pauseAnimation();
     }
 

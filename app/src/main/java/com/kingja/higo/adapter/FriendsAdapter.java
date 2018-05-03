@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kingja.higo.R;
+import com.kingja.higo.model.entiy.Friend;
 
 import java.util.List;
 
@@ -14,8 +15,8 @@ import java.util.List;
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-public class FriendsAdapter extends BaseLvAdapter<String> {
-    public FriendsAdapter(Context context, List<String> list) {
+public class FriendsAdapter extends BaseLvAdapter<Friend> {
+    public FriendsAdapter(Context context, List<Friend> list) {
         super(context, list);
     }
 
@@ -33,10 +34,6 @@ public class FriendsAdapter extends BaseLvAdapter<String> {
         return convertView;
     }
 
-    @Override
-    public int getCount() {
-        return 27;
-    }
 
     public class ViewHolder {
         public final View root;

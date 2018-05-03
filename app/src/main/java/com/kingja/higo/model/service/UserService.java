@@ -1,9 +1,13 @@
 package com.kingja.higo.model.service;
 
 import com.kingja.higo.model.HttpResult;
+import com.kingja.higo.model.entiy.Deal;
 import com.kingja.higo.model.entiy.Discount;
+import com.kingja.higo.model.entiy.Friend;
 import com.kingja.higo.model.entiy.Login;
 import com.kingja.higo.model.entiy.Message;
+import com.kingja.higo.model.entiy.PersonalInfo;
+import com.kingja.higo.model.entiy.Wallet;
 
 import java.util.List;
 
@@ -12,6 +16,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * 项目名称：和Api相关联
@@ -21,22 +26,61 @@ import retrofit2.http.POST;
  * 修改备注：
  */
 public interface UserService {
-
+    /*登录*/
     @FormUrlEncoded
-//    @POST("login")
-    @POST("api/admin/login2")
+    @POST("login")
     Observable<HttpResult<Login>> login(@Field("mobile") String mobile, @Field("password") String password);
 
+    /*注册*/
+    @FormUrlEncoded
     @POST("register")
     Observable<HttpResult<Object>> register(@Field("mobile") String mobile, @Field("password") String password,
                                             @Field("code") String code);
 
-    @POST("modify_password")
-    Observable<HttpResult<Object>> modifyPassword(@Field("password") String password, @Field("c_password") String c_password);
+    /*忘记密码*/
+    @FormUrlEncoded
+    @POST("forgetPw")
+    Observable<HttpResult<Object>> setNewPassword(@Field("mobile") String mobile, @Field("password") String password,
+                                                  @Field("code") String code);
 
-    @GET("api/admin/message")
+    /*修改密码*/
+    @FormUrlEncoded
+    @POST("me/modify_password")
+    Observable<HttpResult<Object>> modifyPassword(@Field("password") String password, @Field("c_password") String
+            c_password);
+
+    /*我的消息*/
+    @GET("me/message")
     Observable<HttpResult<List<Message>>> message();
 
+    /*交易明细*/
+    @GET("me/deal_list")
+    Observable<HttpResult<List<Deal>>> getDealList();
+
+    /*我的优惠券*/
     @GET("me/voucher")
     Observable<HttpResult<List<Discount>>> voucher();
+
+    /*我的钱包*/
+    @GET("me/wallet")
+    Observable<HttpResult<Wallet>> wallet();
+
+    /*发送验证码*/
+    @FormUrlEncoded
+    @POST("sms")
+    Observable<HttpResult<Object>> sms(@Field("mobile") String mobile, @Field("type") String type);
+
+    /*修改昵称*/
+    @FormUrlEncoded
+    @POST("me/modify_nickname")
+    Observable<HttpResult<Object>> modifyNickname(@Field("nickname") String nickname);
+
+    /*个人信息*/
+    @GET("u/{id}")
+    Observable<HttpResult<PersonalInfo>> getPersonalInfo(@Path("id") String id);
+
+    /*我的好友*/
+    @GET("me/friends")
+    Observable<HttpResult<List<Friend>>> getMineFriends();
+
 }

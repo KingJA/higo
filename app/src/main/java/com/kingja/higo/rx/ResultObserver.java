@@ -2,6 +2,7 @@ package com.kingja.higo.rx;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.kingja.higo.base.BaseView;
 import com.kingja.higo.model.HttpResult;
 import com.kingja.higo.util.ToastUtil;
@@ -33,13 +34,13 @@ public abstract class ResultObserver<T> extends DefaultObserver<HttpResult<T>> {
 
     @Override
     public void onNext(HttpResult<T> httpResult) {
-        Log.e(TAG, "onNext: " );
+
+       Logger.json(new Gson().toJson(httpResult));
         baseView.hideLoading();
-        if (httpResult.getCode() == 0) {
+        if (httpResult.getCode() == 200) {
             onSuccess(httpResult.getData());
         } else {
             ToastUtil.showText(httpResult.getMessage());
-            Log.e(TAG, "httpResult.getMessage(): " +httpResult.getMessage());
         }
     }
 

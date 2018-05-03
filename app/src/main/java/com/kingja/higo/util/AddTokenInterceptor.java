@@ -30,7 +30,6 @@ public class AddTokenInterceptor implements Interceptor {
     public AddTokenInterceptor() {
         DaggerSpComponent.builder().appModule(new AppModule(App.getContext())).spModule(new SpModule()).build()
                 .inject(this);
-        mSpManager.putToken("message");
     }
 
     @Override

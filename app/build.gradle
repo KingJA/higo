@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION
     defaultConfig {
         applicationId "com.kingja.higo"
         minSdkVersion MIN_SDK_VERSION as int
@@ -11,7 +12,6 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
-    buildToolsVersion BUILD_TOOLS_VERSION
     lintOptions {
         abortOnError false
     }
@@ -91,6 +91,7 @@ dependencies {
     implementation("com.github.hotchemi:permissionsdispatcher:3.2.0"){ exclude group: 'com.android.support' }
     annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.2.0"
     implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.1.2'
 }
 
 
