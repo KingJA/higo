@@ -1,10 +1,12 @@
-package com.kingja.higo.activity;
+package com.kingja.higo.page.setting;
 
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.kingja.higo.R;
+import com.kingja.higo.activity.ModifyPhoneActivity;
+import com.kingja.higo.activity.PersonalActivity;
 import com.kingja.higo.base.BaseTitleActivity;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.page.discount.DiscountActivity;
@@ -36,7 +38,7 @@ public class SettingActivity extends BaseTitleActivity {
 
 
     @OnClick({R.id.rl_setting_personal, R.id.rl_setting_modifyPhone, R.id.rl_setting_modifyPassword, R.id
-            .rl_setting_help, R.id.rl_setting_aboutUs})
+            .rl_setting_help, R.id.rl_setting_aboutUs, R.id.stv_setting_quit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_setting_personal:
@@ -53,6 +55,8 @@ public class SettingActivity extends BaseTitleActivity {
                 break;
             case R.id.rl_setting_aboutUs:
                 GoUtil.goActivity(this, DiscountActivity.class);
+                break;
+            case R.id.stv_setting_quit:
                 break;
 
             default:

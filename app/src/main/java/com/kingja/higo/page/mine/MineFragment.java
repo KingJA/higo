@@ -10,7 +10,7 @@ import com.kingja.higo.R;
 import com.kingja.higo.page.mine_friends.MineFriendsActivity;
 import com.kingja.higo.activity.OrderActivity;
 import com.kingja.higo.activity.PersonalActivity;
-import com.kingja.higo.activity.SettingActivity;
+import com.kingja.higo.page.setting.SettingActivity;
 import com.kingja.higo.base.BaseFragment;
 import com.kingja.higo.injector.component.AppComponent;
 import com.kingja.higo.model.entiy.PersonalInfo;

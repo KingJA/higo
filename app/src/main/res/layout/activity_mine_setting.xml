@@ -145,7 +145,7 @@
 
 
     <com.kingja.supershapeview.view.SuperShapeTextView
-        android:id="@+id/stv_quit"
+        android:id="@+id/stv_setting_quit"
         style="@style/font_f_17"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

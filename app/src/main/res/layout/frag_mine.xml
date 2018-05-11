@@ -74,7 +74,7 @@
                 android:id="@+id/tv_login"
                 android:padding="12dp"
                 style="@style/font_f_18"
-                android:text="未登录"
+                android:text="注册/登录"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

@@ -83,4 +83,8 @@ public interface UserService {
     @GET("me/friends")
     Observable<HttpResult<List<Friend>>> getMineFriends();
 
+    /*退出登录*/
+    @GET("me/getLogout")
+    Observable<HttpResult<Object>> logout();
+
 }

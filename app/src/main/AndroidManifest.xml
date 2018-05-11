@@ -32,7 +32,7 @@
             android:screenOrientation="portrait"/>
         <!--设置界面-->
         <activity
-            android:name=".activity.SettingActivity"
+            android:name=".page.setting.SettingActivity"
             android:screenOrientation="portrait"/>
         <!--我的钱包-->
         <activity
