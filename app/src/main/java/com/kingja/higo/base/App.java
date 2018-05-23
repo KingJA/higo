@@ -64,9 +64,6 @@ public class App extends MultiDexApplication {
                 .commit();
     }
 
-    /**
-     * 全局注射器,把全局经常用的实例全引用，然后再给各个Activity或者Fragment引用
-     */
     private void setupComponent() {
         appComponent = DaggerAppComponent.builder()
                 .apiModule(new ApiModule())
