@@ -23,6 +23,8 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.squareup.leakcanary.LeakCanary;
 
+import java.util.ArrayList;
+
 
 /**
  * Description：App
